@@ -21,6 +21,9 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    styleResources: {
+      scss: './assets/*.scss',
+    },
     /*
     ** Run ESLint on save
     extend (config, { isDev, isClient }) {
@@ -34,5 +37,5 @@ module.exports = {
       }
     }
     */
-  }
+  },
 }

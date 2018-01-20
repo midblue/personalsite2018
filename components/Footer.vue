@@ -1,15 +1,13 @@
 <template>
-  <div class="page-content">
-    <ProjectList />
-  </div>
+  <footer>
+    <div>Footer</div>
+  </footer>
 </template>
 
 <script>
-import ProjectList from '~/components/ProjectList'
-
 export default {
   props: [],
-  components: { ProjectList, },
+  components: {},
   data () {
     return {}
   },
@@ -24,5 +22,14 @@ export default {
 </script>
 
 <style lang="scss">
+  
+  $footer-height: $grid-base * 20;
 
+  footer {
+    width: 100%;
+    height: $footer-height;
+    display: flex;
+    align-items: center;
+    padding: 0 $screen-edge;
+  }
 </style>

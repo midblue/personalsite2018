@@ -3,6 +3,7 @@
     <h3 class="title">
       {{ title }}
     </h3>
+    <nuxt-link :to="`/projects/${slug}`">go</nuxt-link>
   </div>
 </template>
 
@@ -11,7 +12,9 @@ export default {
   props: [ 'title', ],
   components: {},
   data () {
-    return {}
+    return {
+      slug: this.title.replace(' ', ''),
+    }
   },
   asyncData () {
     return {}
@@ -23,6 +26,8 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
+
+  
 
 </style>
