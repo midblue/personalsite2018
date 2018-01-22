@@ -4,6 +4,8 @@
       v-for="project in projects"
       :key="project.title"
       :title="project.title"
+      :img="project.img"
+      :description="project.description"
     />
   </section>
 </template>
@@ -12,19 +14,10 @@
 import ProjectEntry from '~/components/ProjectEntry'
 
 export default {
-  props: [],
+  props: [ 'projects', ],
   components: { ProjectEntry, },
   data () {
-    return {
-      projects: [
-        {
-          title: '1'
-        },
-        {
-          title: '2'
-        },
-      ],
-    }
+    return {}
   },
   asyncData () {
     return {}

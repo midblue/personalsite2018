@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1>
-      jasper
+      <nuxt-link to="/">jasper</nuxt-link>
     </h1>
     <nav>
       <nuxt-link to="/about">about</nuxt-link>
@@ -25,9 +25,9 @@ export default {
   methods: {},
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   
-  $header-height: $grid-base * 10;
+  $header-height: $grid-base * 15;
 
   header {
     width: 100%;
@@ -39,6 +39,7 @@ export default {
     h1 {
       padding: 0;
       margin: 0;
+      margin-right: $grid-base * 5;
     }
   }
 

@@ -1,7 +1,30 @@
 
+// colors
+
+$bg: #f6f6f6; //#ffeb3b;
+$darkbg: #222;
+$panelcolor: #fff;
+$active: #f00;
+$text: #000;
+$text-sub: #666;
+
+// base units
+
 $grid-base: 6px;
-$type-base: 16px;
+$type-base: 19px;
 
+$line-height: 1.7;
 
+// sizing
 
 $screen-edge: $grid-base * 10;
+$text-column: $grid-base * 135;
+
+
+// mixins
+
+@mixin flex-center () {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

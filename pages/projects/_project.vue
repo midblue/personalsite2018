@@ -5,23 +5,26 @@
     </h1>
     <article>
       content
+      <PostImage />
     </article>
+    <nuxt-link to="/">prev</nuxt-link>
     <nuxt-link to="/">home</nuxt-link>
+    <nuxt-link to="/">next</nuxt-link>
   </div>
 </template>
 
 <script>
-
+import PostImage from '~/components/post/PostImage'
 export default {
   props: [],
-  components: {},
+  components: { PostImage, },
   data () {
     return {}
   },
   asyncData (context) {
     const data = {
       title: context.route.path,
-      slug: context.route.path,
+      slug: context.route.path.replace(/ /g, ''),
     } 
     return data
   },
@@ -32,6 +35,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+
+  .page-content {
+    margin: 0 $screen-edge;
+  }
 
 </style>

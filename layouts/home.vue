@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <Header />
+    <BigHeader />
     <nuxt class="content"/>
     <Footer />
   </div>
@@ -8,9 +8,9 @@
 
 <script>
 import Footer from '~/components/Footer'
-import Header from '../components/Header'
+import BigHeader from '../components/BigHeader'
 export default {
-  components: { Header, Footer, },
+  components: { BigHeader, Footer, },
   mounted () {
   },
 }

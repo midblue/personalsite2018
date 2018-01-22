@@ -1,7 +1,12 @@
 <template>
-  <footer>
-    <div>Footer</div>
-  </footer>
+  <header>
+    <h1>
+      jasper
+    </h1>
+    <nav>
+      <nuxt-link to="/about">about</nuxt-link>
+    </nav>
+  </header>
 </template>
 
 <script>
@@ -20,19 +25,22 @@ export default {
   methods: {},
 }
 </script>
-
-<style lang="scss">
+<style lang="scss" scoped>
   
-  $footer-height: $grid-base * 60;
+  $header-height: $grid-base * 75;
 
-  footer {
+  header {
     width: 100%;
-    color: $bg;
-    background: $darkbg;
-    height: $footer-height;
+    height: $header-height;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     padding: 0 $screen-edge;
+
+    h1 {
+
+    }
   }
+
 </style>
