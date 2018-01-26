@@ -11,18 +11,23 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=UA-112989318-1'},
+      { src: '/ga.js' },
+    ],
   },
   /*
   ** Customize the progress bar color
   */
   loading: { color: '#f00' },
+  css: [ './assets/main.scss' ],
   /*
   ** Build configuration
   */
   build: {
     styleResources: {
-      scss: './assets/*.scss',
+      scss: './assets/variables.scss',
     },
     /*
     ** Run ESLint on save

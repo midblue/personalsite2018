@@ -6,7 +6,7 @@
   >
     <div class="overlay"></div>
     <div
-      v-for="section, index in sections"
+      v-for="(section, index) in sections"
       :key="index"
       class="element"
       :class="{highlight: hover === 'h' + index}"
@@ -14,13 +14,13 @@
     >
       <div class="line"></div>
       <nuxt-link
-        :to="`/projects/${section.nickname}`"
+        :to="`/projects/${section.slug}`"
         class="block"
       >
         <div class="dot"></div>
       </nuxt-link>
       <div class="title">
-        <nuxt-link :to="`/projects/${section.nickname}`">
+        <nuxt-link :to="`/projects/${section.slug}`">
           {{ section.title }}
         </nuxt-link>
       </div>
@@ -55,7 +55,6 @@ export default {
     top: 0;
     right: 0;
     width: $width;
-    background: $bg;
     z-index: 100;
 
     .overlay {
@@ -66,7 +65,7 @@ export default {
       bottom: 0;
       right: 0;
       pointer-events: none;
-      background: rgba($bg, .6);
+      background: rgba($darkbg, .6);
       opacity: 0;
       transition: all .5s;
     }
@@ -76,17 +75,21 @@ export default {
       width: $width;
       height: $width;
       z-index: 1;
+      background: $bg;
       @include flex-center();
 
       &.highlight {
+        background: $active;
         .line{
+          background: white;
         }
         .dot{
-          background: $active;
+          background: white;
         }
         .title a {
           color: white !important;
           background: $active;
+          font-weight: 600;
         }
       }
 
@@ -99,7 +102,7 @@ export default {
         margin: 0 auto;
       }
 
-      &:first-child .line {
+      &:nth-child(2) .line {
         top: 50%;
       }
 
@@ -128,18 +131,18 @@ export default {
         left: 0;
         bottom: 0;
         transform: translateX(-80%);
-        background: $bg;
         white-space: nowrap;
         opacity: 0;
         pointer-events: none;
-        transition: transform .5s, color .2s, opacity .5s;
-        box-shadow: 0 0 50px $bg;
+        transition: transform .5s, opacity .5s;
 
         a {
           display: block;
           height: 100%;
+          background: $bg;
           padding-left: $grid-base * 2;
-          transition: color .2s;
+          padding-right: 200px;
+          margin-right: -200px;
           text-decoration: none;
           color: $text !important;
         }

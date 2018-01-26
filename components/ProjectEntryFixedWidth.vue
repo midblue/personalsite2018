@@ -16,7 +16,7 @@
           {{ date }}
         </time>
         <summary>
-          {{ description }}
+          {{ clippedDescription }}
           <nuxt-link
             v-if="!parts"
             :to="`/projects/${slug}`"
@@ -47,12 +47,28 @@ export default {
   props: [ 'title', 'slug', 'date', 'img', 'description', 'parts', ],
   components: {},
   data () {
-    return {}
+    return {
+      softCharLimit: 700,
+    }
   },
   asyncData () {
     return {}
   },
-  computed: {},
+  computed: {
+    clippedDescription () {
+      if (this.description.length < this.softCharLimit) return this.description
+      const descriptionAfterLimit = this.description.substring(this.softCharLimit)
+      let min = 0
+      const nextSpace = [
+        descriptionAfterLimit.indexOf(' '),
+        descriptionAfterLimit.indexOf(','),
+        descriptionAfterLimit.indexOf('.'),
+        descriptionAfterLimit.indexOf('!'),
+        descriptionAfterLimit.indexOf('?'),
+      ].reduce((min, e) => (e < min && e >= 0) ? e : min) + this.softCharLimit
+      return this.description.substring(0, nextSpace) + '...'
+    },
+  },
   watch: {},
   mounted () {},
   methods: {},
@@ -62,33 +78,29 @@ export default {
 <style lang="scss" scoped>
 
   .project {
-    padding-bottom: $grid-base * 10;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto $grid-base * 15 auto;
     display: flex;
-    flex-direction: column;
-
-    &:nth-child(2n) .infobox {
-      align-self: flex-end;
-    }
+    border-top: 4px solid $active;
+    box-shadow: $big-shadow;
 
     .listimg {
       background-size: cover;
       background-position: center center;
-      width: 100%;
-      height: $grid-base * 90;
-      margin-bottom: -1 * $grid-base * 40;
+      flex-shrink: 0;
+      width: 40%;
     }
 
+    $infobox-pad-lr: $grid-base * 10;
+
     .infobox {
-      max-width: $text-column + ($grid-base * 30);
-      padding-top: $grid-base * 10;
+      padding-top: $grid-base * 5;
+      flex: 1;
       background: $panelcolor;
-      margin: 0 $screen-edge;
-      border-top: 4px solid $active;
-      box-shadow: $big-shadow;
 
       .info {
-        padding-right: $grid-base * 20;
-        padding-left: $grid-base * 10;
+        padding: 0 $infobox-pad-lr;
 
         &.padbot {
           padding-bottom: $grid-base * 5;
@@ -100,20 +112,22 @@ export default {
         .part {
           display: block;
           width: 100%;
-          border-top: 2px solid $offpanel;
-          padding: $grid-base * 5 $grid-base * 10;
+          border-top: 1px solid $border;
+          border-left: 0px solid transparent;
+          padding: $grid-base * 2 $infobox-pad-lr;
           transition: all .2s;
+
+          &:last-of-type {
+            margin-bottom: $grid-base * 10;
+            border-bottom: 1px solid $border;
+          }
 
           &:hover {
             background: $offpanel;
-            border-top: 2px solid $active;
+            border-left: $grid-base * 2 solid $active;
           }
         }
       }
-    }
-
-    h2 {
-      line-height: 1.5;
     }
 
     summary {

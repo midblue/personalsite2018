@@ -3,15 +3,13 @@
     <ProjectEntry
       v-for="project in projects"
       :key="project.title"
-      :title="project.title"
-      :img="project.img"
-      :description="project.description"
+      v-bind="project"
     />
   </section>
 </template>
 
 <script>
-import ProjectEntry from '~/components/ProjectEntry'
+import ProjectEntry from '~/components/ProjectEntryFixedWidth'
 
 export default {
   props: [ 'projects', ],

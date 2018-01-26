@@ -1,7 +1,10 @@
 <template>
   <div>
-    <img />
-    <details>caption</details>
+    <img 
+      src="/"
+      alt="alt text"
+    />
+    <summary>caption</summary>
   </div>
 </template>
 
@@ -22,5 +25,7 @@ export default {
 }
 </script>
 <style lang="scss">
+
+
 
 </style>

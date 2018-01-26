@@ -1,9 +1,19 @@
 
 // colors
+/*$bg: #23225D; //#ffeb3b;
+$darkbg: #111;
+$panelcolor: lighten(#23225D, 3%);
+$offpanel: darken($panelcolor, 2%);
+$active: #ffeb3b;
+$text: #fff;
+$text-sub: #666;
+*/
 
-$bg: #f6f6f6; //#ffeb3b;
-$darkbg: #222;
+$bg: #fafafa; //#ffeb3b;
+$darkbg: #111;
 $panelcolor: #fff;
+$offpanel: darken($panelcolor, 2%);
+$border: darken($panelcolor, 6%);
 $active: #f00;
 $text: #000;
 $text-sub: #666;
@@ -14,12 +24,16 @@ $grid-base: 6px;
 $type-base: 19px;
 
 $line-height: 1.7;
+$letter-spacing: 0.4px;
 
 // sizing
 
 $screen-edge: $grid-base * 10;
 $text-column: $grid-base * 135;
 
+// styles
+
+$big-shadow: 0 6px 16px rgba($darkbg, .1);
 
 // mixins
 
