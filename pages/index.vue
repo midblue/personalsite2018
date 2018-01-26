@@ -25,7 +25,7 @@ export default {
           slug: 'uxinjapan',
           img: '/placeholder/5.jpg',
           date: '2017–2018',
-          description: `A four-part case study into my 1.5 years spent working as the only UX designer at a 2,000-person game company in Japan in which I try to run user interviews in a second language, to convince 200 engineers that something called "UX" is relevant to their work, and to train a UX mentee to be confident.`,
+          description: `A four-part case study into my year and a half spent working as the only UX designer at a 2,000-person game company in Japan, in which I try to run user interviews in a second language, to convince 200 engineers that something called "UX" is relevant to their work, and to train a UX mentee to be confident.`,
           parts: [
             'Level-Setting: Sharing UX Ideas With a Wary Audience',
             'Into the Fold: Teaching by Doing',
@@ -43,7 +43,7 @@ export default {
         {
           title: 'Encouraging Low-Placing Tournament Entrants Using Bracket Data',
           slug: 'positivity',
-          img: '/positivity/3.jpg',
+          img: '/positivity/2.jpg',
           date: 'Winter 2017',
           description: `This is the story of a project that was born out of my own frustration and self-disgust. A story of feeling dejected, and worthless, and never wanting to come back. It turns out that going to a Super Smash Bros. Melee tournament might not always be as cheery as it sounds; no matter how friendly the competition, losing out 0-2 in tournament sucks. Like, /really/ sucks. It's the kind of thing that hits you in a strange spot of pride that you didn't know you had, and when I found myself in that spot, wanting to run and hide while I was among friends, all I could think was, "I have to fix this." This is a story about searching for redemption, for all of us down there, bravely grinding away in the lower half of the bracket. This is a story of positivity, and of gradual growth, and of being proud of what you achieved, even if you lost 0-2. This is one for the underdogs.`,
         },
@@ -64,7 +64,7 @@ export default {
         {
           title: 'In Defense of the Title "UX Engineer"',
           slug: 'uxengineer',
-          img: '/placeholder/6.jpg',
+          img: '/placeholder/7.jpg',
           date: 'Spring 2018',
           description: `In which I explore the ins and outs of the weird and often obtuse spectrum of titles in the web-oriented design world, and why I believe that, as ridiculous as it may sound, it might be worth adding another to your vocabulary. At least it doesn\'t sound as silly as 'unicorn'... right?`,
           parts: [

@@ -65,7 +65,7 @@ export default {
       bottom: 0;
       right: 0;
       pointer-events: none;
-      background: rgba($darkbg, .6);
+      background: rgba($darkbg, .4);
       opacity: 0;
       transition: all .5s;
     }
@@ -75,19 +75,19 @@ export default {
       width: $width;
       height: $width;
       z-index: 1;
-      background: $bg;
+      background: $panel;
       @include flex-center();
 
       &.highlight {
         background: $active;
         .line{
-          background: white;
+          background: $panel;
         }
         .dot{
-          background: white;
+          background: $panel;
         }
         .title a {
-          color: white !important;
+          color: $panel !important;
           background: $active;
           font-weight: 600;
         }
@@ -100,6 +100,7 @@ export default {
         width: 2px;
         background: $text-sub;
         margin: 0 auto;
+        z-index: 2;
       }
 
       &:nth-child(2) .line {
@@ -122,10 +123,11 @@ export default {
         height: 20%;
         border-radius: 50%;
         background: $text-sub;
-        z-index: 2;
+        z-index: 3;
       }
 
       .title {
+        z-index: 1;
         position: absolute;
         top: 0;
         left: 0;
@@ -139,7 +141,7 @@ export default {
         a {
           display: block;
           height: 100%;
-          background: $bg;
+          background: $panel;
           padding-left: $grid-base * 2;
           padding-right: 200px;
           margin-right: -200px;

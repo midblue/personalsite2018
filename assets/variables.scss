@@ -10,10 +10,10 @@ $text-sub: #666;
 */
 
 $bg: #fafafa; //#ffeb3b;
-$darkbg: #111;
-$panelcolor: #fff;
-$offpanel: darken($panelcolor, 2%);
-$border: darken($panelcolor, 6%);
+$darkbg: #1b1b1b;
+$panel: #fff;
+$offpanel: darken($panel, 2%);
+$border: darken($panel, 6%);
 $active: #f00;
 $text: #000;
 $text-sub: #666;

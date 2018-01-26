@@ -1,6 +1,14 @@
 <template>
   <footer>
-    <div>Footer</div>
+    <div>
+      All text &amp; work by Jasper Stephenson
+    </div>
+    <div>
+      Site built with <a href="https://nuxtjs.org/guide" target="_blank">Nuxt</a>
+    </div>
+    <div>
+      <a href="mailto:jasperstephenson.com">Contact me</a>
+    </div>
   </footer>
 </template>
 
@@ -31,6 +39,7 @@ export default {
     background: $darkbg;
     height: $footer-height;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 $screen-edge;

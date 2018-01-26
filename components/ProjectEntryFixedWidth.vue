@@ -22,7 +22,7 @@
             :to="`/projects/${slug}`"
             class="inline-block"
           >
-            read more
+            keep reading
           </nuxt-link>
         </summary>
       </div>
@@ -97,7 +97,7 @@ export default {
     .infobox {
       padding-top: $grid-base * 5;
       flex: 1;
-      background: $panelcolor;
+      background: $panel;
 
       .info {
         padding: 0 $infobox-pad-lr;

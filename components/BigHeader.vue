@@ -6,7 +6,7 @@
       jasper
     </h1>
     <h4 class="fade">
-      UX Engineer
+      UX Engineer, Digital Tinkerer
     </h4>
     <nav>
       <nuxt-link to="/about">about</nuxt-link>
@@ -94,7 +94,7 @@ export default {
     justify-content: center;
     flex-direction: column;
     padding: 0 $screen-edge;
-    padding-bottom: $grid-base * 40;
+    padding-bottom: $grid-base * 35;
     margin-bottom: -$grid-base * 35;
 
     h1, h4 {
