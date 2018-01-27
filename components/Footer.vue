@@ -4,7 +4,7 @@
       All text &amp; work by Jasper Stephenson
     </div>
     <div>
-      Site built with <a href="https://nuxtjs.org/guide" target="_blank">Nuxt</a>
+      Site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt</a>
     </div>
     <div>
       <a href="mailto:jasperstephenson.com">Contact me</a>
@@ -43,5 +43,9 @@ export default {
     align-items: center;
     justify-content: center;
     padding: 0 $screen-edge;
+
+    a, a:hover, a:active {
+      color: $active-on-dark;
+    }
   }
 </style>

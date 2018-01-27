@@ -9,12 +9,12 @@
     <!-- </nuxt-link> -->
     <div class="infobox">
       <div class="info" :class="{padbot: !parts}">
-        <h2 class="title">
-          <nuxt-link :to="`/projects/${slug}`">{{ title }}</nuxt-link>
-        </h2>
         <time class="fade">
           {{ date }}
         </time>
+        <h2 class="title">
+          <nuxt-link :to="`/projects/${slug}`">{{ title }}</nuxt-link>
+        </h2>
         <summary>
           {{ clippedDescription }}
           <nuxt-link
@@ -79,7 +79,7 @@ export default {
 
   .project {
     width: 100%;
-    max-width: 1200px;
+    max-width: $max-page-width;
     margin: 0 auto $grid-base * 15 auto;
     display: flex;
     border-top: 4px solid $active;
@@ -89,7 +89,7 @@ export default {
       background-size: cover;
       background-position: center center;
       flex-shrink: 0;
-      width: 40%;
+      width: 45%;
     }
 
     $infobox-pad-lr: $grid-base * 10;
@@ -112,14 +112,14 @@ export default {
         .part {
           display: block;
           width: 100%;
-          border-top: 1px solid $border;
+          //border-top: 1px solid $border;
           border-left: 0px solid transparent;
           padding: $grid-base * 2 $infobox-pad-lr;
           transition: all .2s;
 
           &:last-of-type {
             margin-bottom: $grid-base * 10;
-            border-bottom: 1px solid $border;
+            //border-bottom: 1px solid $border;
           }
 
           &:hover {

@@ -15,6 +15,7 @@ $panel: #fff;
 $offpanel: darken($panel, 2%);
 $border: darken($panel, 6%);
 $active: #f00;
+$active-on-dark: lighten($active, 10%);
 $text: #000;
 $text-sub: #666;
 
@@ -28,6 +29,7 @@ $letter-spacing: 0.4px;
 
 // sizing
 
+$max-page-width: 1200px;
 $screen-edge: $grid-base * 10;
 $text-column: $grid-base * 135;
 

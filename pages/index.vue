@@ -74,6 +74,13 @@ export default {
           ],
         },
         {
+          title: 'A UX Analysis of Game HUD Damage Indicators',
+          slug: 'hud',
+          img: '/placeholder/6.jpg',
+          date: 'Spring 2018',
+          description: `asdf`,
+        },
+        {
           title: 'Mapping an Experience that Doesn\'t Exist Yet',
           slug: 'futurexmap',
           img: '/placeholder/2.jpg',

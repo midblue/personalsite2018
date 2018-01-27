@@ -75,7 +75,6 @@ export default {
       width: $width;
       height: $width;
       z-index: 1;
-      background: $panel;
       @include flex-center();
 
       &.highlight {
