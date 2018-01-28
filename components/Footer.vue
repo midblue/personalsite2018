@@ -7,7 +7,7 @@
       Site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt</a>
     </div>
     <div>
-      <a href="mailto:jasperstephenson.com">Contact me</a>
+      <a href="mailto:jasperstephenson.com">Get in touch</a>
     </div>
   </footer>
 </template>

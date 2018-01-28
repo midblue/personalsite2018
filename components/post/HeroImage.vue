@@ -1,16 +1,16 @@
 <template>
   <div>
     <img 
-      src="/"
+      :src="src"
       alt="alt text"
     />
-    <summary>caption</summary>
+    <summary v-if="alt">{{ alt }}</summary>
   </div>
 </template>
 
 <script>
 export default {
-  props: [],
+  props: [ 'src', 'alt', ],
   components: {},
   data () {
     return {}
@@ -24,8 +24,13 @@ export default {
   methods: {},
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 
+  img {
+    width: 100%;
+    height: $grid-base * 100;
+    object-fit: cover;
+  }
 
 
 </style>

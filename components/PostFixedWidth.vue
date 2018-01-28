@@ -1,37 +1,39 @@
 <template>
-  <div class="project">
-    <!-- <nuxt-link :to="`/projects/${slug}`"> -->
+  <div class="post">
+    <nuxt-link :to="`/posts/${slug}`">
       <div
         v-if="img"
         class="listimg"
         :style="`background-image: url('${img}');`"
       ></div>
-    <!-- </nuxt-link> -->
+    </nuxt-link>
     <div class="infobox">
       <div class="info" :class="{padbot: !parts}">
         <time class="fade">
           {{ date }}
         </time>
         <h2 class="title">
-          <nuxt-link :to="`/projects/${slug}`">{{ title }}</nuxt-link>
+          <nuxt-link :to="`/posts/${slug}`">{{ title }}</nuxt-link>
         </h2>
         <summary>
           {{ clippedDescription }}
           <nuxt-link
             v-if="!parts"
-            :to="`/projects/${slug}`"
+            :to="`/posts/${slug}`"
             class="inline-block"
           >
             keep reading
           </nuxt-link>
         </summary>
       </div>
-      <div class="parts">
+      <div
+        class="parts"
+        v-if="parts"
+      >
         <nuxt-link
-          v-if="parts"
           v-for="(part, index) in parts"
           :key="index"
-          :to="`/projects/${slug}#${part}`"
+          :to="`/posts/${slug}#${part}`"
           index="index"
           class="part"
         >
@@ -77,11 +79,12 @@ export default {
 
 <style lang="scss" scoped>
 
-  .project {
+  .post {
     width: 100%;
     max-width: $max-page-width;
     margin: 0 auto $grid-base * 15 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 45% 1fr;
     border-top: 4px solid $active;
     box-shadow: $big-shadow;
 
@@ -89,7 +92,7 @@ export default {
       background-size: cover;
       background-position: center center;
       flex-shrink: 0;
-      width: 45%;
+      height: 100%;
     }
 
     $infobox-pad-lr: $grid-base * 10;
@@ -103,7 +106,7 @@ export default {
         padding: 0 $infobox-pad-lr;
 
         &.padbot {
-          padding-bottom: $grid-base * 5;
+          padding-bottom: $grid-base * 8;
         }
       }
       .parts {

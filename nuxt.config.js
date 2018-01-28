@@ -13,7 +13,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=UA-112989318-1'},
+      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=UA-112989318-1' },
       { src: '/ga.js' },
     ],
   },
@@ -28,6 +28,15 @@ module.exports = {
   build: {
     styleResources: {
       scss: './assets/variables.scss',
+    },
+    extend (config, ctx) {
+      config.module.rules.push({
+        test: /\.(html)$/,
+        include: [/static/],
+        use: {
+          loader: 'html-loader'
+        }
+      })
     },
     /*
     ** Run ESLint on save

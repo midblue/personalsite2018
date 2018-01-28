@@ -10,7 +10,9 @@ module.exports = {
   ],
 
   // add your custom rules here
-  rules: {},
+  rules: {
+    "comma-dangle": "off",
+  },
   globals: {
     Vue: true
   }

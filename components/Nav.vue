@@ -14,13 +14,13 @@
     >
       <div class="line"></div>
       <nuxt-link
-        :to="`/projects/${section.slug}`"
+        :to="`/${section.slug}`"
         class="block"
       >
         <div class="dot"></div>
       </nuxt-link>
       <div class="title">
-        <nuxt-link :to="`/projects/${section.slug}`">
+        <nuxt-link :to="`/posts/${section.slug}`">
           {{ section.title }}
         </nuxt-link>
       </div>
