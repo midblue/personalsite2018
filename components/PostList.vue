@@ -17,9 +17,6 @@ export default {
   data () {
     return {}
   },
-  asyncData () {
-    return {}
-  },
   computed: {},
   watch: {},
   mounted () {},

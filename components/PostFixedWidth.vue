@@ -53,9 +53,6 @@ export default {
       softCharLimit: 700,
     }
   },
-  asyncData () {
-    return {}
-  },
   computed: {
     clippedDescription () {
       if (this.description.length < this.softCharLimit) return this.description
