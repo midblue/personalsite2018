@@ -1,5 +1,5 @@
 <template>
-    <div class="post-content">
+    <div class="page-content">
       <Nav
         v-if="parts"
         :sections="parts"
@@ -38,15 +38,14 @@ export default {
   },
   asyncData (context) {
     const path = context.route.path.replace(/\/$/, '')
-    const JSONData = require(`~/static${path}/data.json`)
+    const data = require(`~/static${path}/data.js`).default
     const content = require(`~/static${path}/content.js`).default
-    const postOrder = require('~/static/postorder.json')
-    const data = {
-      ...JSONData,
+    const postOrder = require('~/static/postorder.js').default
+    return {
+      ...data,
       content,
       postOrder,
-    } 
-    return data
+    }
   },
   computed: {
     thisIndex () { return this.postOrder.indexOf(this.slug) },
@@ -59,7 +58,7 @@ export default {
 
 <style lang="scss" scoped>
 
-  .post-content {
+  .page-content {
     max-width: $max-page-width;
     width: 100%;
     margin: 0 auto;

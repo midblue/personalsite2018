@@ -12,4 +12,5 @@ dist
 
 planning
 screens
-static/posts/
+static/posts
+static/postorder.js

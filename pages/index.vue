@@ -3,9 +3,6 @@
     <PostList
       :posts="orderedPosts"
     />
-    <Nav
-      :sections="orderedPosts"
-    />
   </div>
 </template>
 
@@ -18,13 +15,15 @@ export default {
   props: [],
   components: { PostList, Nav, },
   data () {
-    return {}
+    return {
+      userLanguage: 'ja-JP',
+    }
   },
   asyncData () {
     const posts = []
-    const importedPosts = require.context('~/static/posts', true, /^(.*\.json)/)
-    importedPosts.keys().forEach(key => posts.push(importedPosts(key)))
-    const postOrder = require('~/static/postorder.json')
+    const importedPosts = require.context('~/static/posts', true, /data\.js$/)
+    importedPosts.keys().forEach(key => posts.push(importedPosts(key).default))
+    const postOrder = require('~/static/postorder.js').default
     return {
       posts,
       postOrder,
@@ -32,11 +31,16 @@ export default {
   },
   computed: {
     orderedPosts () {
-      return this.postOrder.map(o => this.posts.find(p => p.slug === o))
+      return this.postOrder.map(o => {
+        const found = this.posts.find(p => p.slug === o)
+        if (found.jp !== false) return found
+      })
     }
   },
   watch: {},
-  mounted () {},
+  mounted () {
+    this.userLanguage = window.navigator.userLanguage || window.navigator.language
+  },
   methods: {},
 }
 </script>

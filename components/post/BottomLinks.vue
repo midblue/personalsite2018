@@ -8,7 +8,7 @@
       <span class="sub">Previous post:</span>
       {{ prevPost.title }}
     </nuxt-link>
-    <nuxt-link to="/" class="center">Home</nuxt-link>
+    <nuxt-link exact to="/" class="center">Home</nuxt-link>
     <nuxt-link
       v-if="nextPost"
       :to="`/posts/${nextPost.slug}`"

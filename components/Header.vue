@@ -2,7 +2,7 @@
   <header>
     <div class="flex">
       <h1>
-        <nuxt-link to="/">jasper</nuxt-link>
+        <nuxt-link exact to="/">jasper</nuxt-link>
       </h1>
       <nav>
         

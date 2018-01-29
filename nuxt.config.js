@@ -1,7 +1,4 @@
 module.exports = {
-  /*
-  ** Headers of the page
-  */
   head: {
     title: 'personalsite2018',
     meta: [
@@ -17,14 +14,11 @@ module.exports = {
       { src: '/ga.js' },
     ],
   },
-  /*
-  ** Customize the progress bar color
-  */
   loading: { color: '#f00' },
+  layoutTransition: {
+    name: 'page',
+  },
   css: [ './assets/main.scss' ],
-  /*
-  ** Build configuration
-  */
   build: {
     styleResources: {
       scss: './assets/variables.scss',
@@ -38,18 +32,5 @@ module.exports = {
         }
       })
     },
-    /*
-    ** Run ESLint on save
-    extend (config, { isDev, isClient }) {
-      if (isDev && isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-    */
   },
 }
