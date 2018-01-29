@@ -5,7 +5,7 @@
       class="left"
       :to="`/posts/${prevPost.slug}`"
     >
-      <span class="fade">Previous post:</span>
+      <span class="sub">Previous post:</span>
       {{ prevPost.title }}
     </nuxt-link>
     <nuxt-link to="/" class="center">Home</nuxt-link>
@@ -13,7 +13,7 @@
       v-if="nextPost"
       :to="`/posts/${nextPost.slug}`"
     >
-      <span class="fade">Next post:</span>
+      <span class="sub">Next post:</span>
       {{ nextPost.title }}
     </nuxt-link>
   </div>
@@ -52,22 +52,30 @@ export default {
 <style lang="scss" scoped>
 
   .bottom-links {
-    max-width: $max-page-width;
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: $grid-base * 15;
     display: flex;
-    box-shadow: $big-shadow;
+    border-top: 1px solid $border-bg;
+    line-height: 1.4;
+
+    a, a:hover, a:visited, a:active {
+      color: $panel;
+    }
+
+    .sub {
+      font-size: .9em;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 800;
+    }
 
     .left {
       align-items: flex-start;
-      border-right: 1px solid $border;
+      border-right: 2px solid $border;
       flex: 1;
     }
 
     .center {
       align-items: center;
-      border-right: 1px solid $border;
+      border-right: 2px solid $border;
       flex: .3;
     }
 
@@ -81,15 +89,15 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      border-top: 2px solid transparent;
-      border-bottom: 2px solid $panel;
+      // border-top: 2px solid transparent;
       transition: all .2s;
       padding: $grid-base * 3 $grid-base * 5;
-      background: $panel;
+      background: $active-on-dark;
+      font-weight: 600;
 
       &:hover {
-        background: $offpanel;
-        border-top: 2px solid $active;
+        background: desaturate(darken($active, 5%), 15%);
+        // border-top: 2px solid $active;
       }
     }
   }

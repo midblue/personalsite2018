@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="post-content">
       <Nav
         v-if="parts"
@@ -15,13 +14,13 @@
         <PostContent
           :content="content"
         />
+        <BottomLinks
+          :thisIndex="thisIndex"
+          :postOrder="postOrder"
+        />
       </div>
     </div>
-    <BottomLinks
-      :thisIndex="thisIndex"
-      :postOrder="postOrder"
-    />
-  </div>
+    
 </template>
 
 <script>
@@ -64,7 +63,7 @@ export default {
     max-width: $max-page-width;
     width: 100%;
     margin: 0 auto;
-    margin-bottom: $grid-base * 10;
+    margin-bottom: $grid-base * 15;
     background: $panel;
     box-shadow: $big-shadow;
 

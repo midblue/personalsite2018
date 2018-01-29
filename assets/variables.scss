@@ -16,7 +16,8 @@ $offpanel: darken($panel, 2%);
 $border: darken($panel, 6%);
 $border-bg: darken($bg, 6%);
 $active: #f00;
-$active-on-dark: lighten($active, 10%);
+// $active-border: darken(desaturate($active, 15%), 10%);
+$active-on-dark: desaturate(lighten($active, 10%), 10%);
 $text: #000;
 $text-sub: #666;
 

@@ -46,7 +46,7 @@
         v-bind="image"
       />
     </template>
-    <img src="~/assets/tombstone.svg" class="tombstone" />
+    <img src="~/assets/tombstone-gray.svg" class="tombstone" />
   </article>
 </template>
 
@@ -67,7 +67,7 @@ export default {
 <style lang="scss" scoped>
 
   .post {
-    padding-bottom: $grid-base * 15;
+    padding-bottom: $grid-base * 20;
   }
 
   .centered {
@@ -90,9 +90,9 @@ export default {
 
   .tombstone {
     display: block;
-    width: $grid-base * 4;
-    height: $grid-base * 4;
+    width: $grid-base * 3;
+    height: $grid-base * 3;
     margin: 0 auto;
-    margin-top: $grid-base * 15;
+    margin-top: $grid-base * 20;
   }
 </style>
