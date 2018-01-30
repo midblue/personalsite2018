@@ -68,18 +68,18 @@ ul {
 .page-enter-active, //.page-leave-active, 
 .page-enter-active .page-content, //.page-leave-active .page-content, 
 .page-enter-active footer, {//.page-leave-active footer {
-  transition: all .15s;
+  transition: all .5s;
 }
 
 .page-enter .page-content, 
 .page-enter.page-content, 
 .page-enter footer {
   opacity: 0;
-  // transform: translateX(20px);
+  transform: translateY(20px);
 }
 .page-leave-active .page-content, 
 .page-leave-active.page-content, 
 .page-leave-active footer {
   opacity: 0;
-  // transform: translateX(-20px);
+  transform: translateY(-20px);
 }

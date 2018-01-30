@@ -22,7 +22,7 @@
             :to="`/posts/${slug}`"
             class="inline-block"
           >
-            keep reading
+            Keep reading →
           </nuxt-link>
         </summary>
       </div>
@@ -64,6 +64,9 @@ export default {
         descriptionAfterLimit.indexOf('.'),
         descriptionAfterLimit.indexOf('!'),
         descriptionAfterLimit.indexOf('?'),
+        descriptionAfterLimit.indexOf(';'),
+        descriptionAfterLimit.indexOf(':'),
+        descriptionAfterLimit.indexOf('-'),
       ].reduce((min, e) => (e < min && e >= 0) ? e : min) + this.softCharLimit
       return this.description.substring(0, nextSpace) + '...'
     },

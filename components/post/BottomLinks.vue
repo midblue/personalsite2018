@@ -27,7 +27,7 @@ export default {
     return {}
   },
   computed: {
-    nextPost () {
+    prevPost () {
       const slug = this.postOrder[this.thisIndex - 1] || null
       if (!slug) return null
       return {
@@ -35,7 +35,7 @@ export default {
         title: require(`~/static/posts/${slug}/data.js`).default.title,
       }
     },
-    prevPost () {
+    nextPost () {
       const slug = this.postOrder[this.thisIndex + 1] || null
       if (!slug) return null
       return {

@@ -18,8 +18,10 @@ module.exports = {
   layoutTransition: {
     name: 'page',
   },
-  css: [ './assets/main.scss' ],
+  css: ['./assets/main.scss'],
+  plugins: ['~/plugins/postPlugins'],
   build: {
+    post: [ 'postPlugins', ],
     styleResources: {
       scss: './assets/variables.scss',
     },

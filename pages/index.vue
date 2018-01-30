@@ -34,7 +34,7 @@ export default {
       const orderedPosts = this.postOrder.map(o => {
         const found = this.posts.find(p => p.slug === o)
         return (this.userLanguage === 'ja-JP' && found.s === true) ? null : found
-      }).filter(p => p).reverse()
+      }).filter(p => p)
       // console.log(orderedPosts)
       return orderedPosts
     }

@@ -10,6 +10,12 @@
     </div>
     <div>
       <span class="fade">UX Engineer, Digital Tinkerer. </span>
+      <nuxt-link to="/about">Projects</nuxt-link>
+      |
+      <nuxt-link to="/about">Experiences</nuxt-link>
+      |
+      <nuxt-link to="/about">Breakdowns</nuxt-link>
+      |
       <nuxt-link to="/about">About me</nuxt-link>
     </div> 
   </header>

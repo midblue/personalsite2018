@@ -6,7 +6,11 @@
   >
     <img
       ref="image"
-      :src="src"
+      v-lazy="{
+        src: src,
+        error: '/images/error.svg',
+        loading: '/images/loading.svg'
+      }"
       :alt="alt"
       :width="width"
       :height="height"
