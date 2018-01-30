@@ -16,7 +16,7 @@ export default {
   components: { PostList, Nav, },
   data () {
     return {
-      userLanguage: 'ja-JP',
+      userLanguage: '',
     }
   },
   asyncData () {
@@ -31,10 +31,12 @@ export default {
   },
   computed: {
     orderedPosts () {
-      return this.postOrder.map(o => {
+      const orderedPosts = this.postOrder.map(o => {
         const found = this.posts.find(p => p.slug === o)
-        if (found.jp !== false) return found
-      })
+        return (this.userLanguage === 'ja-JP' && found.s === true) ? null : found
+      }).filter(p => p).reverse()
+      // console.log(orderedPosts)
+      return orderedPosts
     }
   },
   watch: {},

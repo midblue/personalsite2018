@@ -27,20 +27,20 @@ export default {
     return {}
   },
   computed: {
-    prevPost () {
+    nextPost () {
       const slug = this.postOrder[this.thisIndex - 1] || null
       if (!slug) return null
       return {
         slug,
-        title: require(`~/static/posts/${slug}/data.json`).title,
+        title: require(`~/static/posts/${slug}/data.js`).default.title,
       }
     },
-    nextPost () {
+    prevPost () {
       const slug = this.postOrder[this.thisIndex + 1] || null
       if (!slug) return null
       return {
         slug,
-        title: require(`~/static/posts/${slug}/data.json`).title,
+        title: require(`~/static/posts/${slug}/data.js`).default.title,
       }
     },
   },
