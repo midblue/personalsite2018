@@ -48,6 +48,14 @@ export default {
       postOrder,
     }
   },
+  head () {
+    return {
+      title: this.title,
+      meta: [
+        { hid: 'description', name: 'description', content: this.description },
+      ]
+    }
+  },
   computed: {
     thisIndex () { return this.postOrder.indexOf(this.slug) },
   },

@@ -22,6 +22,14 @@ export default {
   asyncData () {
     return {}
   },
+  head () {
+    return {
+      title: 'About',
+      meta: [
+        { hid: 'description', name: 'description', content: `UX Engineer, Digital Tinkerer.` },
+      ]
+    }
+  },
   computed: {},
   watch: {},
   mounted () {},

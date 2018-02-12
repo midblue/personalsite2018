@@ -29,6 +29,14 @@ export default {
       postOrder,
     }
   },
+  head () {
+    return {
+      title: 'Home',
+      meta: [
+        { hid: 'description', name: 'description', content: `UX Engineer, Digital Tinkerer.` },
+      ]
+    }
+  },
   computed: {
     orderedPosts () {
       const orderedPosts = this.postOrder.map(o => {
