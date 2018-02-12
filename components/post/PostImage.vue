@@ -9,6 +9,7 @@
       :alt="alt"
       :width="width"
       :height="height"
+      @click="lightbox(src)"
     />
     <div class="caption" v-if="alt" :style="`max-width: ${width}px`">
       {{ alt }}
@@ -55,6 +56,9 @@ export default {
         this.height = this.maxHeight
         this.width = this.maxHeight * this.aspectRatio
       }
+    },
+    lightbox (src) {
+      this.$emit('lightbox', this.src)
     }
   },
 }

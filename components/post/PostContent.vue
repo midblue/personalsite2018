@@ -1,5 +1,9 @@
 <template>
   <article class="post">
+    <Lightbox
+      :src="lightboxSrc"
+      @close="lightboxSrc = null"
+    />
     <template v-for="(element, index) in content">
       <div class="divider centered" v-if="element.h2 || element.line"></div>
       <h2
@@ -72,6 +76,7 @@
         v-if="element.img"
         v-for="(image, imgIndex) in element.img"
         v-bind="image"
+        @lightbox="lightbox"
       />
     </template>
     <img src="~/assets/tombstone-gray.svg" class="tombstone" />
@@ -80,16 +85,27 @@
 
 <script>
 import PostImage from '~/components/post/PostImage'
+import Lightbox from '~/components/post/Lightbox'
 export default {
   props: [ 'content', ],
-  components: { PostImage, },
+  components: { PostImage, Lightbox, },
   data () {
-    return {}
+    return {
+      lightboxOn: false,
+      lightboxSrc: null,
+    }
   },
   computed: {},
   watch: {},
   mounted () {},
-  methods: {},
+  methods: {
+    lightbox (src) {
+      const fullSrc = (src.indexOf('full') === -1) ?
+        src.substring(0, src.lastIndexOf('/')) + '/full' + src.substring(src.lastIndexOf('/'))
+        : src
+      this.lightboxSrc = fullSrc
+    },
+  },
 }
 </script>
 <style lang="scss" scoped>

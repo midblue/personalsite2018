@@ -75,6 +75,7 @@ export default {
     }
 
     .title {
+      margin-top: $grid-base * 4;
       border-top: $grid-base solid $active;
       padding-top: $grid-base * 4;
       margin-bottom: $grid-base * 6;
