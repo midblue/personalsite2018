@@ -1,13 +1,15 @@
 <template>
   <footer>
-    <div>
-      All text &amp; work by Jasper Stephenson
-    </div>
-    <div>
-      Site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt</a>
-    </div>
-    <div>
-      <a href="mailto:jasperstephenson.com">Get in touch</a>
+    <div class="footer-content">
+      <div>
+        All text &amp; work by Jasper Stephenson
+      </div>
+      <div>
+        Site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt</a>
+      </div>
+      <div>
+        <a href="mailto:jasperstephenson.com">Get in touch</a>
+      </div>
     </div>
   </footer>
 </template>
@@ -35,14 +37,21 @@ export default {
 
   footer {
     width: 100%;
-    color: $bg;
+    color: $text-sub;
     background: $darkbg;
     height: $footer-height;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 0 $screen-edge;
+    position: relative;
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      max-width: $max-page-width;
+      margin: 0 auto;
+    }
 
     a, a:hover, a:active {
       color: $active-on-dark;

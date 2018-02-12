@@ -2,9 +2,8 @@
   <div>
     <img 
       :src="src"
-      alt="alt text"
+      :alt="alt"
     />
-    <summary v-if="alt">{{ alt }}</summary>
   </div>
 </template>
 

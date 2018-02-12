@@ -6,6 +6,7 @@
       />
       <HeroImage
         :src="img"
+        :alt="'Header image – ' + title"
       />
       <div class="content-column">
         <h1 class="title centered">
@@ -63,8 +64,8 @@ export default {
     width: 100%;
     margin: 0 auto;
     margin-bottom: $grid-base * 15;
-    background: $panel;
-    box-shadow: $big-shadow;
+    //background: $panel;
+    //box-shadow: $big-shadow;
 
     .centered {
       max-width: $max-text-column-width;

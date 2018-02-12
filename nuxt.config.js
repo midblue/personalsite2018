@@ -19,7 +19,6 @@ module.exports = {
     name: 'page',
   },
   css: ['./assets/main.scss'],
-  plugins: ['~/plugins/postPlugins'],
   build: {
     post: [ 'postPlugins', ],
     styleResources: {

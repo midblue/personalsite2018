@@ -9,9 +9,9 @@
     </nuxt-link>
     <div class="infobox">
       <div class="info" :class="{padbot: !parts}">
-        <time class="fade">
+        <!-- <time class="fade">
           {{ date }}
-        </time>
+        </time> -->
         <h2 class="title">
           <nuxt-link :to="`/posts/${slug}`">{{ title }}</nuxt-link>
         </h2>
@@ -50,7 +50,7 @@ export default {
   components: {},
   data () {
     return {
-      softCharLimit: 700,
+      softCharLimit: 500,
     }
   },
   computed: {

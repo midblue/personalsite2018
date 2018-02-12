@@ -4,17 +4,21 @@
       v-if="prevPost"
       class="left"
       :to="`/posts/${prevPost.slug}`"
+      :style="{'background-image': `url('${prevPost.img}')`}"
     >
       <span class="sub">Previous post:</span>
-      {{ prevPost.title }}
+      <span>{{ prevPost.title }}</span>
     </nuxt-link>
-    <nuxt-link exact to="/" class="center">Home</nuxt-link>
+    <nuxt-link exact to="/" class="center">
+      <span>Home</span>
+    </nuxt-link>
     <nuxt-link
       v-if="nextPost"
       :to="`/posts/${nextPost.slug}`"
+      :style="{'background-image': `url('${nextPost.img}')`}"
     >
       <span class="sub">Next post:</span>
-      {{ nextPost.title }}
+      <span>{{ nextPost.title }}</span>
     </nuxt-link>
   </div>
 </template>
@@ -30,17 +34,19 @@ export default {
     prevPost () {
       const slug = this.postOrder[this.thisIndex - 1] || null
       if (!slug) return null
+      const postData = require(`~/static/posts/${slug}/data.js`).default
       return {
         slug,
-        title: require(`~/static/posts/${slug}/data.js`).default.title,
+        ...postData
       }
     },
     nextPost () {
       const slug = this.postOrder[this.thisIndex + 1] || null
       if (!slug) return null
+      const postData = require(`~/static/posts/${slug}/data.js`).default
       return {
         slug,
-        title: require(`~/static/posts/${slug}/data.js`).default.title,
+        ...postData
       }
     },
   },
@@ -57,7 +63,26 @@ export default {
     line-height: 1.4;
 
     a, a:hover, a:visited, a:active {
+      position: relative;
+      background-size: cover;
+      background-position: center center;
       color: $panel;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 2;
+        background-color: rgba(black, .4);
+      }
+
+      span {
+        position: relative;
+        z-index: 3;
+      }
     }
 
     .sub {

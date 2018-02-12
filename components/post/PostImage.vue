@@ -1,23 +1,18 @@
 <template>
   <div
     class="post-image"
-    :class="{pre: pre}"
     :style="`max-height: ${maxHeight + 100}px`"
   >
     <img
       ref="image"
-      v-lazy="{
-        src: src,
-        error: '/images/error.svg',
-        loading: '/images/loading.svg'
-      }"
+      :src="src"
       :alt="alt"
       :width="width"
       :height="height"
     />
-    <div class="caption" :style="`max-width: ${width}px`">
+    <div class="caption" v-if="alt" :style="`max-width: ${width}px`">
       {{ alt }}
-      <span>
+      <span v-if="link">
         (<a :href="link" target="_blank">Source</a>)
       </span>
     </div>
@@ -30,31 +25,29 @@ export default {
   components: {},
   data () {
     return {
-      maxWidth: 0,
       maxHeight: 500,
       width: null,
       height: null,
-      aspectRatio: 1,
-      pre: true,
+      naturalWidth: 800,
+      naturalHeight: 500,
     }
   },
   computed: {
+    maxWidth () { return parseInt(this.$el.getBoundingClientRect().width) },
+    aspectRatio () { return this.naturalWidth / this.naturalHeight },
+    containerAspectRatio () { return this.maxWidth / this.maxHeight }
   },
-  watch: {},
-  mounted () {
-    this.$nextTick(() => {
-      this.maxWidth = parseInt(this.$el.getBoundingClientRect().width)
-      const imageWidth = parseInt(this.$refs.image.getBoundingClientRect().width)
-      const imageHeight = parseInt(this.$refs.image.getBoundingClientRect().height)
-      // console.log(imageWidth, imageHeight)
-      this.aspectRatio = imageWidth / imageHeight
-      const containerAspectRatio = this.maxWidth / this.maxHeight
-      // console.log(this.aspectRatio, containerAspectRatio)
-      if (imageWidth <= this.maxWidth && imageHeight <= this.maxHeight) {
-        this.width = imageWidth
-        this.height = imageHeight
+  watch: {
+    naturalWidth () { this.$nextTick(() => this.calculateWidthAndHeight()) },
+  },
+  mounted () {},
+  methods: {
+    calculateWidthAndHeight () {
+      if (this.naturalWidth <= this.maxWidth && this.naturalHeight <= this.maxHeight) {
+        this.width = this.naturalWidth
+        this.height = this.naturalHeight
       }
-      if (this.aspectRatio > containerAspectRatio) {
+      if (this.aspectRatio > this.containerAspectRatio) {
         this.width = this.maxWidth
         this.height = this.maxWidth / this.aspectRatio
       }
@@ -62,34 +55,29 @@ export default {
         this.height = this.maxHeight
         this.width = this.maxHeight * this.aspectRatio
       }
-      this.$nextTick(() => this.pre = false)
-    })
+    }
   },
-  methods: {},
 }
 </script>
 <style lang="scss" scoped>
 
   .post-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    position: relative;
     margin: ($grid-base * 8) 0;
     transition: all .2s;
   }
 
-  .pre {
-    * {
-      opacity: 0;
-    }
-  }
-
   img {
+    display: block;
     transition: opacity .2s;
+    max-width: 100%;
+    max-height: 500px;
+    margin: 0 auto;
   }
 
   .caption {
-    margin-top: $grid-base;
+    margin: $grid-base auto 0 auto;
+    max-width: $max-text-column-width;
     font-size: .75em;
     text-align: center;
     transition: opacity .2s;

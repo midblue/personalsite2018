@@ -27,6 +27,22 @@
         v-html="text"
         class="centered"
       ></p>
+      <p
+        :key="'n' + index"
+        v-if="element.aside"
+        class="aside centered"
+      >
+        <span
+          v-if="element.aside.title"
+          class="asidetitle"
+          v-html="element.aside.title"
+        ></span>
+        <span
+          :key="aindex"
+          v-for="(p, aindex) in element.aside.text"
+          v-html="p"
+        ></span>
+      </p>
       <ul
         :key="index"
         v-if="element.ul"
@@ -39,6 +55,18 @@
           {{ item }}
         </li>
       </ul>
+      <ol
+        :key="index"
+        v-if="element.ol"
+        class="centered"
+      >
+        <li
+          v-for="(item, lIndex) in element.ol"
+          :key="lIndex"
+        >
+          {{ item }}
+        </li>
+      </ol>
       <PostImage
         :key="'i' + imgIndex + 'n' + index"
         v-if="element.img"
@@ -77,8 +105,24 @@ export default {
     margin-right: auto;
   }
 
+  .aside {
+    opacity: .8;
+    background: $bg;
+    padding: $grid-base * 6 $grid-base * 8;
+    margin: $grid-base * 4 auto;
+    position: relative;
+  }
+  .asidetitle{
+    display: block;
+    margin-top: -$grid-base;
+    margin-bottom: $grid-base;
+    font-size: .75em;
+    font-weight: 700;
+    opacity: .5;
+  }
+
   .divider {
-    width: 50%;
+    width: 10%;
     border-top: 2px solid $border-bg;
     margin-top: $grid-base * 12;
     padding-top: $grid-base * 8;

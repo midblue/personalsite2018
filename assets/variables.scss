@@ -9,17 +9,21 @@ $text: #fff;
 $text-sub: #666;
 */
 
+// base values
 $bg: #fafafa; //#ffeb3b;
 $darkbg: #1b1b1b;
 $panel: #fff;
+$active: #f00;
+$text: #000;
+$text-sub: #666;
+
+// derivative values
 $offpanel: darken($panel, 2%);
 $border: darken($panel, 6%);
 $border-bg: darken($bg, 6%);
-$active: #f00;
 // $active-border: darken(desaturate($active, 15%), 10%);
 $active-on-dark: desaturate(lighten($active, 10%), 10%);
-$text: #000;
-$text-sub: #666;
+
 
 // base units
 
