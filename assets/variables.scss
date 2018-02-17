@@ -13,7 +13,10 @@ $text-sub: #666;
 $bg: #fafafa; //#ffeb3b;
 $darkbg: #1b1b1b;
 $panel: #fff;
-$active: #f00;
+$active: #F6511D;//#D00000;//#0af;
+$active2: #FFB400;
+$active3: #00A6ED;
+$active4: #7FB800;
 $text: #000;
 $text-sub: #666;
 
@@ -50,4 +53,12 @@ $big-shadow: 0 6px 16px rgba($darkbg, .1);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin full-width-with-pad () {
+  max-width: $max-page-width + $screen-edge*2;
+  padding-right: $screen-edge;
+  padding-left: $screen-edge;
+  width: 100%;
+  margin: 0 auto;
 }

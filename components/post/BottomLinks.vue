@@ -1,25 +1,26 @@
 <template>
   <div class="bottom-links">
     <nuxt-link
+      v-if="nextPost"
+      class="right"
+      :to="`/posts/${nextPost.slug}`"
+      :style="{'background-image': `url('${nextPost.img}')`}"
+    >
+      <span class="sub fade ">Next post:</span>
+      <span>{{ nextPost.title }}</span>
+    </nuxt-link>
+    <nuxt-link
       v-if="prevPost"
       class="left"
       :to="`/posts/${prevPost.slug}`"
       :style="{'background-image': `url('${prevPost.img}')`}"
     >
-      <span class="sub">Previous post:</span>
+      <span class="sub fade">Previous post:</span>
       <span>{{ prevPost.title }}</span>
     </nuxt-link>
-    <nuxt-link exact to="/" class="center">
+    <!--<nuxt-link exact to="/" class="center">
       <span>Home</span>
-    </nuxt-link>
-    <nuxt-link
-      v-if="nextPost"
-      :to="`/posts/${nextPost.slug}`"
-      :style="{'background-image': `url('${nextPost.img}')`}"
-    >
-      <span class="sub">Next post:</span>
-      <span>{{ nextPost.title }}</span>
-    </nuxt-link>
+    </nuxt-link>-->
   </div>
 </template>
 
@@ -57,9 +58,11 @@ export default {
 </script>
 <style lang="scss" scoped>
 
+
   .bottom-links {
     display: flex;
-    border-top: 1px solid $border-bg;
+    flex-direction: column;
+    // border-top: 1px solid $border-bg;
     line-height: 1.4;
 
     a, a:hover, a:visited, a:active {
@@ -67,6 +70,7 @@ export default {
       background-size: cover;
       background-position: center center;
       color: $panel;
+      text-decoration: none;
 
       &::after {
         content: '';
@@ -76,12 +80,18 @@ export default {
         bottom: 0;
         right: 0;
         z-index: 2;
-        background-color: rgba(black, .4);
+        background-color: rgba($darkbg, .6);
+        transition: all .2s;
+      }
+
+      &:hover::after {
+        background-color: rgba($darkbg, .3);
       }
 
       span {
         position: relative;
         z-index: 3;
+        text-shadow: 0 0 3px rgba($darkbg, .2);
       }
     }
 
@@ -94,20 +104,20 @@ export default {
 
     .left {
       align-items: flex-start;
-      border-right: 2px solid $border;
-      flex: 1;
+      // border-right: 2px solid $border;
+      // flex: 1;
     }
 
     .center {
       align-items: center;
-      border-right: 2px solid $border;
+      // border-right: 2px solid $border;
       flex: .3;
     }
 
-    & > *:not(.left):not(.center) {
+    .right {
       align-items: flex-end;
       text-align: right;
-      flex: 1;
+      // flex: 1;
     }
 
     & > * {
@@ -115,15 +125,9 @@ export default {
       flex-direction: column;
       justify-content: center;
       // border-top: 2px solid transparent;
-      transition: all .2s;
-      padding: $grid-base * 3 $grid-base * 5;
-      background: $active-on-dark;
+      padding: $grid-base * 10;
+      background: $active;
       font-weight: 600;
-
-      &:hover {
-        background: desaturate(darken($active, 5%), 15%);
-        // border-top: 2px solid $active;
-      }
     }
   }
 

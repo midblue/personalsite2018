@@ -64,6 +64,16 @@ ul, ol {
   opacity: .4;
 }
 
+.p {
+  display: block;
+  margin: 1em 0;
+}
+
+.page-content {
+  position: relative;
+  z-index: 2;
+  @include full-width-with-pad();
+}
 
 
 .page-enter-active, //.page-leave-active, 

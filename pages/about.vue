@@ -4,9 +4,11 @@
       i'm jasper
     </h1>
     <nuxt-link to="/">home</nuxt-link>
+    <div>esports fanatic. i'm talkin' all the good stuff: Super Smash Bros. Melee, League of Legends, Starcraft (Brood War & 2), Overwatch, speedruns. </div>
     <br />
     <a href="https://twitter.com/midblue" target="_blank">twitter</a>
     <a href="mailto:jasperstephenson@gmail.com">email</a>
+    <a href="https://www.linkedin.com/in/jasperstephenson" target="_blank">linkedIn</a>
     <a href="https://github.com/midblue" target="_blank">github</a>
   </section>
 </template>

@@ -3,6 +3,7 @@
     <img 
       :src="src"
       :alt="alt"
+      @click="lightbox"
     />
   </div>
 </template>
@@ -20,7 +21,11 @@ export default {
   computed: {},
   watch: {},
   mounted () {},
-  methods: {},
+  methods: {
+    lightbox (src) {
+      this.$emit('lightbox', this.src)
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>

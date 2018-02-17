@@ -50,7 +50,7 @@ export default {
   components: {},
   data () {
     return {
-      softCharLimit: 500,
+      softCharLimit: 600,
     }
   },
   computed: {
@@ -89,6 +89,7 @@ export default {
     box-shadow: $big-shadow;
 
     .listimg {
+      background-color: $bg;
       background-size: cover;
       background-position: center center;
       flex-shrink: 0;

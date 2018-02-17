@@ -1,9 +1,5 @@
 <template>
   <article class="post">
-    <Lightbox
-      :src="lightboxSrc"
-      @close="lightboxSrc = null"
-    />
     <template v-for="(element, index) in content">
       <div class="divider centered" v-if="element.h2 || element.line"></div>
       <h2
@@ -42,8 +38,9 @@
           v-html="element.aside.title"
         ></span>
         <span
-          :key="aindex"
+          class="p"
           v-for="(p, aindex) in element.aside.text"
+          :key="'a' + aindex"
           v-html="p"
         ></span>
       </p>
@@ -55,9 +52,8 @@
         <li
           v-for="(item, lIndex) in element.ul"
           :key="lIndex"
-        >
-          {{ item }}
-        </li>
+          v-html="item"
+        ></li>
       </ul>
       <ol
         :key="index"
@@ -67,9 +63,8 @@
         <li
           v-for="(item, lIndex) in element.ol"
           :key="lIndex"
-        >
-          {{ item }}
-        </li>
+          v-html="item"
+        ></li>
       </ol>
       <PostImage
         :key="'i' + imgIndex + 'n' + index"
@@ -85,26 +80,18 @@
 
 <script>
 import PostImage from '~/components/post/PostImage'
-import Lightbox from '~/components/post/Lightbox'
 export default {
   props: [ 'content', ],
-  components: { PostImage, Lightbox, },
+  components: { PostImage, },
   data () {
     return {
-      lightboxOn: false,
-      lightboxSrc: null,
     }
   },
   computed: {},
   watch: {},
   mounted () {},
   methods: {
-    lightbox (src) {
-      const fullSrc = (src.indexOf('full') === -1) ?
-        src.substring(0, src.lastIndexOf('/')) + '/full' + src.substring(src.lastIndexOf('/'))
-        : src
-      this.lightboxSrc = fullSrc
-    },
+    lightbox (src) { this.$emit('lightbox', src) },
   },
 }
 </script>
@@ -134,6 +121,7 @@ export default {
     margin-bottom: $grid-base;
     font-size: .75em;
     font-weight: 700;
+    text-transform: uppercase;
     opacity: .5;
   }
 

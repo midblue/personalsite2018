@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="footer-content">
-      <div>
+     <!-- <div>
         All text &amp; work by Jasper Stephenson
       </div>
       <div>
@@ -9,7 +9,7 @@
       </div>
       <div>
         <a href="mailto:jasperstephenson.com">Get in touch</a>
-      </div>
+      </div>-->
     </div>
   </footer>
 </template>

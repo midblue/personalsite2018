@@ -1,26 +1,36 @@
 <template>
+  <div>
+    <Lightbox
+      :src="lightboxSrc"
+      @close="lightboxSrc = null"
+    />
     <div class="page-content">
-      <Nav
-        v-if="parts"
-        :sections="parts"
-      />
-      <HeroImage
-        :src="img"
-        :alt="'Header image – ' + title"
-      />
-      <div class="content-column">
-        <h1 class="title centered">
-          {{ title }}
-        </h1>
-        <PostContent
-          :content="content"
+      <div class="post-column">
+        <Nav
+          v-if="parts"
+          :sections="parts"
         />
-        <BottomLinks
-          :thisIndex="thisIndex"
-          :postOrder="postOrder"
+        <HeroImage
+          :src="img"
+          :alt="'Header image – ' + title"
+          @lightbox="lightbox"
         />
+        <div class="content-column">
+          <h1 class="title centered">
+            {{ title }}
+          </h1>
+          <PostContent
+            :content="content"
+            @lightbox="lightbox"
+          />
+        </div>
       </div>
     </div>
+    <BottomLinks
+      :thisIndex="thisIndex"
+      :postOrder="postOrder"
+    />
+  </div>
     
 </template>
 
@@ -29,12 +39,14 @@ import HeroImage from '~/components/post/HeroImage'
 import Nav from '~/components/Nav'
 import PostContent from '~/components/post/PostContent'
 import BottomLinks from '~/components/post/BottomLinks'
+import Lightbox from '~/components/post/Lightbox'
 export default {
   props: [],
-  components: { HeroImage, Nav, PostContent, BottomLinks, },
+  components: { HeroImage, Nav, PostContent, BottomLinks, Lightbox, },
   data () {
     return {
       parts: this.parts || null,
+      lightboxSrc: null,
     }
   },
   asyncData (context) {
@@ -61,19 +73,28 @@ export default {
   },
   watch: {},
   mounted () {},
-  methods: {},
+  methods: {
+    lightbox (src) {
+      const fullSrc = (src.indexOf('full') === -1) ?
+        src.substring(0, src.lastIndexOf('/')) + '/full' + src.substring(src.lastIndexOf('/'))
+        : src
+      this.lightboxSrc = fullSrc
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 
   .page-content {
-    max-width: $max-page-width;
-    width: 100%;
-    margin: 0 auto;
-    margin-bottom: $grid-base * 15;
-    //background: $panel;
+    //margin-bottom: $grid-base * 15;
+    @include full-width-with-pad();
     //box-shadow: $big-shadow;
+
+    .post-column {
+      width: 100%;
+      background: $panel;
+    }
 
     .centered {
       max-width: $max-text-column-width;
@@ -84,7 +105,7 @@ export default {
 
     .title {
       margin-top: $grid-base * 4;
-      border-top: $grid-base solid $active;
+      //border-top: $grid-base solid $active;
       padding-top: $grid-base * 4;
       margin-bottom: $grid-base * 6;
     }

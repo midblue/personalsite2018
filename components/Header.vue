@@ -10,17 +10,18 @@
         </nav>
       </div>
       <div>
-        <div>UX Engineer, Digital Tinkerer</div>
-        <!-- <div class="fade">Thing maker/considerer</div> -->
+        <div>UX Engineer, Digital Tinkerer. <nuxt-link to="/about">About me</nuxt-link></div>
+        <!-- <div class="fade">Thing maker/considerer</div>
         <nuxt-link to="/about">Projects</nuxt-link>
         |
         <nuxt-link to="/about">Experiences</nuxt-link>
         |
         <nuxt-link to="/about">Breakdowns</nuxt-link>
-        |
-        <nuxt-link to="/about">About me</nuxt-link>
+        | -->
+        
       </div> 
     </div>
+    <div class="bg"></div>
   </header>
 </template>
 
@@ -47,25 +48,38 @@ export default {
 
   header {
     width: 100%;
-    height: $header-height;
-    //height: $header-height + $header-extra;
-    //padding-bottom: $header-extra;
-    //margin-bottom: -$header-extra;
+    // height: $header-height;
+    height: $header-height + $header-extra;
+    padding-bottom: $header-extra;
+    margin-bottom: -$header-extra;
     
     // background-image: url('~/static/images/blobs.svg');
-    //background-image: url('~/static/images/slice.svg');
+    // background-image: url('~/static/images/slice.svg');
     background-size: 100% auto;
     background-position: center top;
     background-repeat: no-repeat;
-    //color: white !important;
-    //font-weight: 500;
+    color: white !important;
+    font-weight: 600;
 
   }
 
+  .bg {
+    position: fixed;;
+    width: 200%;
+    height: 100%;
+    background: $active;
+    background: linear-gradient($active, $active);
+    transform: 
+      translateX(-35%) 
+      translateY(-95%) 
+      rotate(-30deg);
+    z-index: 0;
+  }
+
   .header-content {
-    width: 100%;
-    max-width: $max-page-width;
-    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    @include full-width-with-pad();
     height: $header-height;
     display: flex;
     flex-direction: column;
@@ -75,12 +89,13 @@ export default {
   }
 
   a, a:visited, a:hover, a:active {
-    // color: white;
+    color: white;
+    text-decoration: underline;
   }
 
   h1 a, h1 a:visited, h1 a:hover, h1 a:active {
     text-decoration: none;
-    // color: black;
+    color: white;
   }
 
   h1, h4 {
