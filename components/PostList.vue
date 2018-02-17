@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import Post from '~/components/PostFixedWidth'
+import Post from '~/components/PostPreview'
 
 export default {
   props: [ 'posts', ],
