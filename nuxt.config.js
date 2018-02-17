@@ -13,7 +13,7 @@ module.exports = {
       { src: '/ga.js' },
     ],
   },
-  loading: { color: '#f00' },
+  loading: { color: '#FFB400' },
   layoutTransition: {
     name: 'page',
   },

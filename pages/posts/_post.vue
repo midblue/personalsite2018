@@ -16,7 +16,7 @@
           @lightbox="lightbox"
         />
         <div class="content-column">
-          <h1 class="title centered">
+          <h1 class="page-title centered-in-column">
             {{ title }}
           </h1>
           <PostContent
@@ -94,20 +94,6 @@ export default {
     .post-column {
       width: 100%;
       background: $panel;
-    }
-
-    .centered {
-      max-width: $max-text-column-width;
-      width: 100%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .title {
-      margin-top: $grid-base * 4;
-      //border-top: $grid-base solid $active;
-      padding-top: $grid-base * 4;
-      margin-bottom: $grid-base * 6;
     }
     
   }

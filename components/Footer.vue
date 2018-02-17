@@ -1,15 +1,15 @@
 <template>
   <footer>
     <div class="footer-content">
-     <!-- <div>
+      <div class="padbot">
+        <a href="mailto:jasperstephenson.com">Get in touch!</a>
+      </div>
+     <div>
         All text &amp; work by Jasper Stephenson
       </div>
       <div>
-        Site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt</a>
+        Static site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt.js</a>
       </div>
-      <div>
-        <a href="mailto:jasperstephenson.com">Get in touch</a>
-      </div>-->
     </div>
   </footer>
 </template>
@@ -38,6 +38,8 @@ export default {
   footer {
     width: 100%;
     color: $text-sub;
+    // font-weight: 600;
+    // letter-spacing: 0.6px;
     background: $darkbg;
     height: $footer-height;
     position: relative;
@@ -47,10 +49,8 @@ export default {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      width: 100%;
+      @include full-width-with-pad();
       height: 100%;
-      max-width: $max-page-width;
-      margin: 0 auto;
     }
 
     a, a:hover, a:active {

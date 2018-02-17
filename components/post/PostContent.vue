@@ -1,71 +1,77 @@
 <template>
   <article class="post">
     <template v-for="(element, index) in content">
-      <div class="divider centered" v-if="element.h2 || element.line"></div>
+      <div class="divider centered-in-column" v-if="element.h2 || element.line"></div>
       <h2
         :key="index"
         v-if="element.h2"
         v-html="element.h2"
-        class="centered"
+        class="centered-in-column"
       ></h2>
       <h3
         :key="index"
         v-if="element.h3"
         v-html="element.h3"
-        class="centered"
+        class="centered-in-column"
       ></h3>
       <h4
         :key="index"
         v-if="element.h4"
         v-html="element.h4"
-        class="centered"
+        class="centered-in-column"
       ></h4>
       <p
         :key="'p' + pindex + 'n' + index"
         v-if="element.p"
         v-for="(text, pindex) in element.p"
         v-html="text"
-        class="centered"
+        class="centered-in-column"
       ></p>
-      <p
+      <div
         :key="'n' + index"
         v-if="element.aside"
-        class="aside centered"
+        class="centered-in-column"
       >
-        <span
-          v-if="element.aside.title"
-          class="asidetitle"
-          v-html="element.aside.title"
-        ></span>
-        <span
-          class="p"
-          v-for="(p, aindex) in element.aside.text"
-          :key="'a' + aindex"
-          v-html="p"
-        ></span>
-      </p>
-      <ul
+        <p class="aside">
+          <span
+            v-if="element.aside.title"
+            class="asidetitle"
+            v-html="element.aside.title"
+          ></span>
+          <span
+            class="p"
+            v-for="(p, aindex) in element.aside.text"
+            :key="'a' + aindex"
+            v-html="p"
+          ></span>
+        </p>
+      </div>
+      <div
         :key="index"
-        v-if="element.ul"
-        class="centered"
+        v-if="element.ul || element.ol"
+        class="centered-in-column"
       >
-        <li
-          v-for="(item, lIndex) in element.ul"
-          :key="lIndex"
-          v-html="item"
-        ></li>
-      </ul>
-      <ol
-        :key="index"
-        v-if="element.ol"
-        class="centered"
-      >
-        <li
-          v-for="(item, lIndex) in element.ol"
-          :key="lIndex"
-          v-html="item"
-        ></li>
-      </ol>
+        <ul
+          :key="index"
+          v-if="element.ul"
+        >
+          <li
+            v-for="(item, lIndex) in element.ul"
+            :key="lIndex"
+            v-html="item"
+          ></li>
+        </ul>
+        <ol
+          :key="index"
+          v-if="element.ol"
+        >
+          <li
+            v-for="(item, lIndex) in element.ol"
+            :key="lIndex"
+            v-html="item"
+          ></li>
+        </ol>
+      </div>
       <PostImage
         :key="'i' + imgIndex + 'n' + index"
         v-if="element.img"
@@ -99,13 +105,6 @@ export default {
 
   .post {
     padding-bottom: $grid-base * 20;
-  }
-
-  .centered {
-    max-width: $max-text-column-width;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .aside {

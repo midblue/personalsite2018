@@ -25,7 +25,7 @@ $offpanel: darken($panel, 2%);
 $border: darken($panel, 6%);
 $border-bg: darken($bg, 6%);
 // $active-border: darken(desaturate($active, 15%), 10%);
-$active-on-dark: desaturate(lighten($active, 10%), 10%);
+$active-on-dark: desaturate(lighten($active, 5%), 0%);
 
 
 // base units
@@ -42,6 +42,7 @@ $max-page-width: 1300px;
 $max-text-column-width: 780px;
 $screen-edge: $grid-base * 10;
 $text-column: $grid-base * 135;
+$content-pad: $grid-base * 8;
 
 // styles
 

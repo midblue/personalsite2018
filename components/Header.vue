@@ -48,10 +48,7 @@ export default {
 
   header {
     width: 100%;
-    // height: $header-height;
-    height: $header-height + $header-extra;
-    padding-bottom: $header-extra;
-    margin-bottom: -$header-extra;
+    height: $header-height;
     
     // background-image: url('~/static/images/blobs.svg');
     // background-image: url('~/static/images/slice.svg');
@@ -64,7 +61,8 @@ export default {
   }
 
   .bg {
-    position: fixed;;
+    // position: fixed;
+    position: absolute;
     width: 200%;
     height: 100%;
     background: $active;
