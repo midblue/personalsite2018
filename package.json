@@ -1,15 +1,13 @@
 {
   "name": "personalsite2018",
   "version": "1.0.0",
-  "description": "Nuxt.js project",
+  "description": "Portfolio website for Jasper Stephenson built using Nuxt.js",
   "author": "Jasper Stephenson <jasperstephenson@gmail.com>",
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "precommit": "npm run lint",
     "tlapse": "tlapse --directory ./screens/home -- localhost:3000/",
     "tlapse2": "tlapse --directory ./screens/project -- localhost:3000/posts/hud"
   },
@@ -30,8 +28,7 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-vue": "^4.0.0-beta.0",
-    "html-loader": "^0.5.5"
+    "eslint-plugin-vue": "^4.0.0-beta.0"
   },
   "browserslist": [
     ">0.5%",

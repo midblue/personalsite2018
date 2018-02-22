@@ -23,14 +23,5 @@ module.exports = {
     styleResources: {
       scss: './assets/variables.scss',
     },
-    extend (config, ctx) {
-      config.module.rules.push({
-        test: /\.(html)$/,
-        include: [/static/],
-        use: {
-          loader: 'html-loader'
-        }
-      })
-    },
   },
 }

@@ -31,7 +31,6 @@
       :postOrder="postOrder"
     />
   </div>
-    
 </template>
 
 <script>
@@ -51,9 +50,9 @@ export default {
   },
   asyncData (context) {
     const path = context.route.path.replace(/\/$/, '')
-    const data = require(`~/static${path}/data.js`).default
-    const content = require(`~/static${path}/content.js`).default
-    const postOrder = require('~/static/postorder.js').default
+    const data = require(`~/static${path}/data.js`)
+    const content = require(`~/static${path}/content.js`)
+    const postOrder = require('~/static/postorder.js')
     return {
       ...data,
       content,

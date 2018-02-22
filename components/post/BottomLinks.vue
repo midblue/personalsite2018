@@ -35,7 +35,7 @@ export default {
     prevPost () {
       const slug = this.postOrder[this.thisIndex - 1] || null
       if (!slug) return null
-      const postData = require(`~/static/posts/${slug}/data.js`).default
+      const postData = require(`~/static/posts/${slug}/data.js`)
       return {
         slug,
         ...postData
@@ -44,7 +44,7 @@ export default {
     nextPost () {
       const slug = this.postOrder[this.thisIndex + 1] || null
       if (!slug) return null
-      const postData = require(`~/static/posts/${slug}/data.js`).default
+      const postData = require(`~/static/posts/${slug}/data.js`)
       return {
         slug,
         ...postData

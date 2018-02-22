@@ -52,7 +52,6 @@
         class="centered-in-column"
       >
         <ul
-          :key="index"
           v-if="element.ul"
         >
           <li
@@ -62,7 +61,6 @@
           ></li>
         </ul>
         <ol
-          :key="index"
           v-if="element.ol"
         >
           <li
@@ -79,6 +77,25 @@
         v-bind="image"
         @lightbox="lightbox"
       />
+      <div
+        :key="index"
+        v-if="element.video"
+        class="centered-in-column"
+      >
+        <div class="video-wrapper" v-html="element.video">
+        </div>
+      </div>
+      <div
+        :key="index"
+        v-if="element.grid"
+        class="centered-in-column grid"
+      >
+        <img
+          v-for="(image, gindex) in element.grid"
+          :key="gindex"
+          :src="image.src"
+        />
+      </div>
     </template>
     <img src="~/assets/tombstone-gray.svg" class="tombstone" />
   </article>
@@ -128,11 +145,28 @@ export default {
     width: 10%;
     border-top: 2px solid $border-bg;
     margin-top: $grid-base * 12;
-    padding-top: $grid-base * 8;
+    padding-bottom: $grid-base * 8;
+
+    // &::after {
+    //   content: '~';
+    //   color: $active;
+    //   font-size: 2.5em;
+    //   font-weight: 200;
+    //   margin: 0 auto;
+    // }
   }
 
   h3 {
     margin-top: $grid-base * 5;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    & > * {
+      max-width: 100%;
+    }
   }
 
   .tombstone {

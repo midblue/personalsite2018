@@ -22,8 +22,8 @@ export default {
   asyncData () {
     const posts = []
     const importedPosts = require.context('~/static/posts', true, /data\.js$/)
-    importedPosts.keys().forEach(key => posts.push(importedPosts(key).default))
-    const postOrder = require('~/static/postorder.js').default
+    importedPosts.keys().forEach(key => posts.push(importedPosts(key)))
+    const postOrder = require('~/static/postorder.js')
     return {
       posts,
       postOrder,
@@ -39,12 +39,10 @@ export default {
   },
   computed: {
     orderedPosts () {
-      const orderedPosts = this.postOrder.map(o => {
+      return this.postOrder.map(o => {
         const found = this.posts.find(p => p.slug === o)
         return (this.userLanguage === 'ja-JP' && found.s === true) ? null : found
       }).filter(p => p)
-      // console.log(orderedPosts)
-      return orderedPosts
     }
   },
   watch: {},

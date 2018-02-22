@@ -3,7 +3,7 @@
     <div class="header-content">
       <div class="flex">
         <h1>
-          <nuxt-link exact to="/">jasper</nuxt-link>
+          <nuxt-link exact to="/">Jasper</nuxt-link>
         </h1>
         <nav>
           
@@ -49,22 +49,18 @@ export default {
   header {
     width: 100%;
     height: $header-height;
-    
-    // background-image: url('~/static/images/blobs.svg');
-    // background-image: url('~/static/images/slice.svg');
     background-size: 100% auto;
     background-position: center top;
     background-repeat: no-repeat;
     color: white !important;
     font-weight: 600;
-
   }
 
   .bg {
     // position: fixed;
     position: absolute;
-    width: 200%;
-    height: 100%;
+    width: 200vw;
+    height: 100vw;
     background: $active;
     background: linear-gradient($active, $active);
     transform: 
