@@ -1,7 +1,7 @@
 <template>
   <article class="post">
     <template v-for="(element, index) in content">
-      <div class="divider centered-in-column" v-if="element.h2 || element.line"></div>
+      <img src="~/assets/threeticks.svg" class="img-divider" v-if="element.h2 || element.line"/>
       <h2
         :key="index"
         v-if="element.h2"
@@ -93,7 +93,7 @@
         <img
           v-for="(image, gindex) in element.grid"
           :key="gindex"
-          :src="image.src"
+          :src="image"
         />
       </div>
     </template>
@@ -141,19 +141,10 @@ export default {
     opacity: .5;
   }
 
-  .divider {
-    width: 10%;
-    border-top: 2px solid $border-bg;
-    margin-top: $grid-base * 12;
-    padding-bottom: $grid-base * 8;
-
-    // &::after {
-    //   content: '~';
-    //   color: $active;
-    //   font-size: 2.5em;
-    //   font-weight: 200;
-    //   margin: 0 auto;
-    // }
+  .img-divider {
+    width: 100%;
+    height: $grid-base * 3;
+    margin: $grid-base * 11 auto $grid-base * 9 auto;
   }
 
   h3 {
@@ -161,6 +152,7 @@ export default {
   }
 
   .grid {
+    margin: ($grid-base * 8) auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 

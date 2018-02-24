@@ -16,7 +16,6 @@ export default {
   components: { PostList, Nav, },
   data () {
     return {
-      userLanguage: '',
     }
   },
   asyncData () {
@@ -38,16 +37,20 @@ export default {
     }
   },
   computed: {
+    userLanguage () { return this.$store.state.userLanguage },
     orderedPosts () {
       return this.postOrder.map(o => {
         const found = this.posts.find(p => p.slug === o)
-        return (this.userLanguage === 'ja-JP' && found.s === true) ? null : found
+        return (this.userLanguage.toLowerCase() === 'ja-jp' && found.s === true) ? null : found
       }).filter(p => p)
     }
   },
   watch: {},
   mounted () {
-    this.userLanguage = window.navigator.userLanguage || window.navigator.language
+    this.$store.commit('set', {
+      userLanguage: window.navigator.userLanguage || window.navigator.language,
+      page: 'home',
+    })
   },
   methods: {},
 }

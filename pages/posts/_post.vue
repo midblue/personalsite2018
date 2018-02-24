@@ -48,8 +48,8 @@ export default {
       lightboxSrc: null,
     }
   },
-  asyncData (context) {
-    const path = context.route.path.replace(/\/$/, '')
+  asyncData ({ route }) {
+    const path = route.path.replace(/\/$/, '')
     const data = require(`~/static${path}/data.js`)
     const content = require(`~/static${path}/content.js`)
     const postOrder = require('~/static/postorder.js')
@@ -68,10 +68,18 @@ export default {
     }
   },
   computed: {
+    userLanguage () { return this.$store.state.userLanguage },
     thisIndex () { return this.postOrder.indexOf(this.slug) },
   },
   watch: {},
-  mounted () {},
+  mounted () {
+    if (this.userLanguage.toLowerCase() === 'ja-jp' && this.s === true)
+      window.location.replace('http://www.jasperstephenson.com')
+    this.$store.commit('set', {
+      userLanguage: window.navigator.userLanguage || window.navigator.language,
+      page: this.slug,
+    })
+  },
   methods: {
     lightbox (src) {
       const fullSrc = (src.indexOf('full') === -1) ?
@@ -88,11 +96,11 @@ export default {
   .page-content {
     //margin-bottom: $grid-base * 15;
     @include full-width-with-pad();
-    //box-shadow: $big-shadow;
 
     .post-column {
       width: 100%;
       background: $panel;
+      box-shadow: $big-shadow;
     }
     
   }

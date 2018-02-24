@@ -12,6 +12,7 @@
         <!-- <time class="fade">
           {{ date }}
         </time> -->
+        <div class="tag">{{ category }}</div>
         <h2 class="title">
           <nuxt-link :to="`/posts/${slug}`">{{ title }}</nuxt-link>
         </h2>
@@ -46,11 +47,11 @@
 
 <script>
 export default {
-  props: [ 'title', 'slug', 'date', 'img', 'description', 'parts', ],
+  props: [ 'title', 'slug', 'date', 'img', 'description', 'parts', 'category', ],
   components: {},
   data () {
     return {
-      softCharLimit: 600,
+      softCharLimit: 500,
     }
   },
   computed: {
@@ -87,6 +88,7 @@ export default {
     grid-template-columns: 45% 1fr;
     border-top: 4px solid $active;
     box-shadow: $big-shadow;
+    position: relative;
 
     .listimg {
       background-color: $bg;
@@ -132,6 +134,20 @@ export default {
           }
         }
       }
+    }
+
+    .tag {
+      display: inline-block;
+      background: $active;
+      color: white;
+      padding: $grid-base / 3 $grid-base;
+      line-height: 1.4;
+      text-transform: uppercase;
+      font-size: 0.75em;
+      font-weight: 800;
+      margin-right: auto;
+      // position: absolute;
+      // top:0;
     }
 
     summary {

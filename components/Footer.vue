@@ -2,13 +2,18 @@
   <footer>
     <div class="footer-content">
       <div class="padbot">
-        <a href="mailto:jasperstephenson.com">Get in touch!</a>
+        <a href="mailto:jasperstephenson@gmail.com">Get in touch!</a>
       </div>
      <div>
         All text &amp; work by Jasper Stephenson
       </div>
       <div>
         Static site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt.js</a>
+      </div>
+      <div>
+        <nuxt-link v-if="this.page !== 'home'" exact to="/">
+          Back to Home
+        </nuxt-link>
       </div>
     </div>
   </footer>
@@ -24,7 +29,9 @@ export default {
   asyncData () {
     return {}
   },
-  computed: {},
+  computed: {
+    page () { return this.$store.state.page },
+  },
   watch: {},
   mounted () {},
   methods: {},
