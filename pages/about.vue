@@ -1,20 +1,39 @@
 <template>
   <section class="about page-content">
     <div class="about-column">
+
       <div class="me-pic"></div>
-      <div class="centered-in-column">
-        recently worked with companies such as <a>Cygames</a>, <a>Adaptive Path</a>, <a>Blue Rocket</a>, and <a>Beyond UX</a>.
-        NCSU alum and stuff
-        yo LINK to your POSTS in here in the middle of your self intoduction because that shit will <i>prove</i> you know what u talkn bout
-        <div>esports fanatic. i'm talkin' all the good stuff: Super Smash Bros. Melee, League of Legends, Starcraft (Brood War & 2), Overwatch, speedruns. </div>
-        <br />
-        <div class="links">
-          <a href="#">resumé</a>
-          <a href="mailto:jasperstephenson@gmail.com">email</a>
-          <a href="https://twitter.com/midblue" target="_blank">twitter</a>
-          <a href="https://www.linkedin.com/in/jasperstephenson" target="_blank">linkedIn</a>
-          <a href="https://github.com/midblue" target="_blank">github</a>
-        </div>
+      <div class="right">
+        <h3>
+          I'm Jasper, a UX Engineer and Designer based on the U.S. West coast.
+        </h3>
+        
+        <p>
+          <strong>
+            As a designer,
+          </strong>
+          I work across the spectrum of UX, interactive, and visual design with companies like <a href="http://www.adaptivepath.com/" target="_blank">Adaptive Path</a>, <a href="https://www.bluerocket.us/" target="_blank">Blue Rocket</a> and <a href="http://beyondux.com/" target="_blank">Beyond UX</a>. I speak at and facilitate design events, such as the <nuxt-link to="/posts/globalgoalsjam" exact>2017 Tokyo Global Goals Jam</nuxt-link>. I <nuxt-link to="/posts/mentor" exact>mentor</nuxt-link> up-and-coming designers, as well as post about design topics like <nuxt-link to="/posts/hud" exact>the intersection of games and UX</nuxt-link>.
+        </p>
+
+        <p>
+          <strong>
+            As a developer,
+          </strong>
+          I design, build, and test full-stack experiences using tech like Vue, React, Express, and Firebase. While I lived in Tokyo, I built live prototypes of new technologies with the research team at <a href="https://research.cygames.co.jp/" target="_blank">Cygames</a>. I'm a tinkerer by nature, as evidenced by my <a href="https://github.com/midblue" target="_blank">Github page</a> full of tests and projects.
+        </p>
+
+        <p>
+          <strong>
+            Personally,
+          </strong>
+          I've spent the last few years in Tokyo, Japan and I speak Japanese fluently. I'm a huge traveler – from 2013 to 2017 I moved to seven new places, all carrying one backpack. I'm also an esports lover: Super Smash Bros. Melee, League of Legends, Starcraft (Brood War and 2), Overwatch, speedruns – I watch it all.
+        </p>
+
+        <p>
+          If you're interested in working together, or if you just want to know what I'm up to, dont hesitate to <a href="mailto:jasperstephenson@gmail.com">email me</a> or check out my 
+          <a href="https://www.linkedin.com/in/jasperstephenson" target="_blank">LinkedIn page</a> to stay up to date.
+        </p>
+        
       </div>
     </div>
   </section>
@@ -54,13 +73,18 @@ export default {
 <style lang="scss" scoped>
 
   .me-pic {
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: $grid-base * 15;
     overflow: hidden;
-    margin: $grid-base * 5 auto;
     background-image: url('~/static/images/me.jpg');
     background-size: cover;
-    background-position: bottom center;
-    width: $grid-base * 70;
-    height: $grid-base * 70;
+    background-position: bottom right;
+    background-color: rgba($active2, .1);
+    background-blend-mode: screen;
+    width: $grid-base * 80;
+    height: $grid-base * 134;
+    // border-radius: 50%;
     z-index: 3;
     position: relative;
   }
@@ -69,13 +93,25 @@ export default {
     @include full-width-with-pad();
     position: relative;
     z-index: 2;
+    // color: white;
   }
 
   .about-column {
     width: 100%;
     background: $panel;
-    padding-bottom: $grid-base * 20;
+    padding: $content-pad * 2 $content-pad * 2 $grid-base * 20 $content-pad * 2;
     box-shadow: $big-shadow;
+    display: flex;
+  }
+
+  .right {
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+  h3 {
+    padding-top: 0;
+    margin-top: 0;
   }
 
   .links {

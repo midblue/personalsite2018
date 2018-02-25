@@ -12,7 +12,7 @@
         <!-- <time class="fade">
           {{ date }}
         </time> -->
-        <div class="tag">{{ category }}</div>
+        <div class="tag" :class="category">{{ category }}</div>
         <h2 class="title">
           <nuxt-link :to="`/posts/${slug}`">{{ title }}</nuxt-link>
         </h2>
@@ -51,7 +51,7 @@ export default {
   components: {},
   data () {
     return {
-      softCharLimit: 500,
+      softCharLimit: 600,
     }
   },
   computed: {
@@ -148,6 +148,7 @@ export default {
       margin-right: auto;
       // position: absolute;
       // top:0;
+
     }
 
     summary {

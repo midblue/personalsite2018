@@ -11,7 +11,6 @@ import PostList from '~/components/PostList'
 import Nav from '~/components/Nav'
 
 export default {
-  layout: 'home',
   props: [],
   components: { PostList, Nav, },
   data () {

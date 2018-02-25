@@ -1,40 +1,30 @@
 
-// colors
-/*$bg: #23225D; //#ffeb3b;
-$darkbg: #111;
-$panelcolor: lighten(#23225D, 3%);
-$offpanel: darken($panelcolor, 2%);
-$active: #ffeb3b;
-$text: #fff;
-$text-sub: #666;
-*/
-
 // base values
 $bg: #fafafa; //#ffeb3b;
-$darkbg: #1b1b1b;
+$darkbg: darken(#2A2D34, 4%);
 $panel: #fff;
-$active: #F6511D;//#D00000;//#0af;
-$active2: #FFB400;
+$active: #F26430;//#F6511D;//#840032;
+$active2: #009DDC;//#FFB400;
 $active3: #00A6ED;
 $active4: #7FB800;
 $text: #000;
-$text-sub: #666;
+$text-sub: #999;
 
 // derivative values
 $offpanel: darken($panel, 2%);
 $border: darken($panel, 6%);
 $border-bg: darken($bg, 6%);
 // $active-border: darken(desaturate($active, 15%), 10%);
-$active-on-dark: desaturate(lighten($active, 5%), 0%);
+$active-on-dark: desaturate(lighten($active, 3%), 0%);
 
 
 // base units
 
-$grid-base: 6px;
-$type-base: 21px;
+$grid-base: 5px;
+$type-base: 18.5px;
 
 $line-height: 1.8;
-$letter-spacing: 0.4px;
+$letter-spacing: 0.5px;
 
 // sizing
 
@@ -46,7 +36,7 @@ $content-pad: $grid-base * 8;
 
 // styles
 
-$big-shadow: 0 6px 16px rgba($darkbg, .1);
+$big-shadow: 0 6px 16px rgba($darkbg, .08);
 
 // mixins
 

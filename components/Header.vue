@@ -1,25 +1,24 @@
 <template>
-  <header>
-    <div class="header-content">
-      <div class="flex">
-        <h1>
-          <nuxt-link exact to="/">Jasper</nuxt-link>
-        </h1>
-        <nav>
-          
-        </nav>
+  <header :class="page">
+    <div class="wrapper">
+      <div class="header-content">
+        <div class="flex">
+          <h1>
+            <nuxt-link exact to="/">Jasper Stephenson</nuxt-link>
+          </h1>
+        </div>
+        <div>
+          <nuxt-link to="/about" v-if="page !== 'about'" key="1">About me</nuxt-link>
+          <nuxt-link exact to="/" v-else key="2">← Back to home</nuxt-link>
+          <!-- <div class="fade">Thing maker/considerer</div>
+          <nuxt-link to="/about">Projects</nuxt-link>
+          |
+          <nuxt-link to="/about">Experiences</nuxt-link>
+          |
+          <nuxt-link to="/about">Breakdowns</nuxt-link>
+          | -->
+        </div>
       </div>
-      <div>
-        <div>UX Engineer, Digital Tinkerer. <nuxt-link to="/about">About me</nuxt-link></div>
-        <!-- <div class="fade">Thing maker/considerer</div>
-        <nuxt-link to="/about">Projects</nuxt-link>
-        |
-        <nuxt-link to="/about">Experiences</nuxt-link>
-        |
-        <nuxt-link to="/about">Breakdowns</nuxt-link>
-        | -->
-        
-      </div> 
     </div>
     <div class="bg"></div>
   </header>
@@ -35,7 +34,9 @@ export default {
   asyncData () {
     return {}
   },
-  computed: {},
+  computed: {
+    page () { return this.$store.state.page },
+  },
   watch: {},
   mounted () {},
   methods: {},
@@ -54,24 +55,34 @@ export default {
     background-repeat: no-repeat;
     color: white !important;
     font-weight: 600;
+    position: relative;
   }
 
   .bg {
     // position: fixed;
     position: absolute;
-    width: 200vw;
-    height: 100vw;
+    top:0;
+    width: 100vw;
+    height: 200vw;
     background: $active;
-    background: linear-gradient($active, $active);
     transform: 
-      translateX(-35%) 
-      translateY(-95%) 
+      translateX(-65%) 
+      translateY(-85%) 
       rotate(-30deg);
     z-index: 0;
+    transition: .5s;
+  }
+
+  .wrapper {
+    position: relative;
+    display: block;
+    @include full-width-with-pad();
   }
 
   .header-content {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 1;
     @include full-width-with-pad();
     height: $header-height;
@@ -79,7 +90,6 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-
   }
 
   a, a:visited, a:hover, a:active {
@@ -100,6 +110,15 @@ export default {
   .flex {
     display: flex;
     align-items: center;
+  }
+
+  .about {
+    
+    // .bg {
+    //   transform: none;
+    //   position: fixed;
+    //   height: 100vh;
+    // }
   }
 
 </style>
