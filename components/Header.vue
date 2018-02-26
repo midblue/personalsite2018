@@ -8,12 +8,12 @@
           </h1>
         </div>
         <div>
-          <nuxt-link to="/about" v-if="page !== 'about'" key="1">About me</nuxt-link>
-          <nuxt-link exact to="/" v-else key="2">← Back to home</nuxt-link>
-          <!-- <div class="fade">Thing maker/considerer</div>
+          <nuxt-link to="/about" v-if="page !== 'about'" key="1">About Me</nuxt-link>
+          <nuxt-link exact to="/" v-else key="2">← Back to Home</nuxt-link>
+          <!--
           <nuxt-link to="/about">Projects</nuxt-link>
           |
-          <nuxt-link to="/about">Experiences</nuxt-link>
+          <nuxt-link to="/about">Recaps</nuxt-link>
           |
           <nuxt-link to="/about">Breakdowns</nuxt-link>
           | -->

@@ -1,3 +1,4 @@
+const posts = require('./static/postorder.js')
 module.exports = {
   head: {
     titleTemplate: '%s – Jasper Stephenson',
@@ -23,5 +24,12 @@ module.exports = {
     styleResources: {
       scss: './assets/variables.scss',
     },
+  },
+  generate: {
+    dir: 'docs',
+    routes: () => [
+      ...posts.map(p => `posts/${p}`),
+      // '/404',
+    ]
   },
 }
