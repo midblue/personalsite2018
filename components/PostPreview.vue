@@ -51,10 +51,13 @@ export default {
   components: {},
   data () {
     return {
-      softCharLimit: 600,
     }
   },
   computed: {
+    softCharLimit () {
+      return this.winWidth > 768 ? 600 : 200
+    },
+    winWidth () { return this.$store.state.winWidth },
     clippedDescription () {
       if (this.description.length < this.softCharLimit) return this.description
       const descriptionAfterLimit = this.description.substring(this.softCharLimit)
@@ -90,15 +93,24 @@ export default {
     box-shadow: $big-shadow;
     position: relative;
 
+    @include width (mobile){
+      grid-template-columns: 1fr;
+    }
+
     .listimg {
       background-color: $bg;
       background-size: cover;
       background-position: center center;
       flex-shrink: 0;
       height: 100%;
+
+      @include width (mobile){
+        height: $grid-base * 50;
+      }
     }
 
     $infobox-pad-lr: $grid-base * 10;
+    $infobox-pad-lr-mobile: $grid-base * 4;
 
     .infobox {
       padding-top: $grid-base * 5;
@@ -107,6 +119,10 @@ export default {
 
       .info {
         padding: 0 $infobox-pad-lr;
+
+        @include width (mobile) {
+          padding: 0 $infobox-pad-lr-mobile;
+        }
 
         &.padbot {
           padding-bottom: $grid-base * 8;

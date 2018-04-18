@@ -130,6 +130,10 @@ export default {
     padding: $grid-base * 6 $grid-base * 8;
     margin: $grid-base * 4 auto;
     position: relative;
+
+    @include width (mobile) {
+      padding: $grid-base * 6 $grid-base * 4 $grid-base * 2 $grid-base * 4;
+    }
   }
   .asidetitle{
     display: block;

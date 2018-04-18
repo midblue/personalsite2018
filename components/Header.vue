@@ -45,7 +45,7 @@ export default {
 <style lang="scss" scoped>
   
   $header-height: $grid-base * 50;
-  $header-extra: $grid-base * 200;
+  $header-height-mobile: $grid-base * 50;
 
   header {
     width: 100%;
@@ -56,21 +56,28 @@ export default {
     color: white !important;
     font-weight: 600;
     position: relative;
+    -webkit-backface-visibility: hidden;
+
+    @include width (mobile) {
+      height: $header-height-mobile;
+    }
   }
 
   .bg {
     // position: fixed;
+    background: url('~/static/images/slice.svg');
+    background-position: left 99%;
+    background-size: cover;
     position: absolute;
     top:0;
     width: 100vw;
-    height: 200vw;
-    background: $active;
-    transform: 
-      translateX(-65%) 
-      translateY(-85%) 
-      rotate(-30deg);
+    height: 40vw;
     z-index: 0;
-    transition: .5s;
+    -webkit-backface-visibility: hidden;
+
+    @include width(mobile) {
+      height: 150vw;
+    }
   }
 
   .wrapper {

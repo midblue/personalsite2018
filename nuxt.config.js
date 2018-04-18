@@ -4,7 +4,8 @@ module.exports = {
     titleTemplate: '%s – Jasper Stephenson',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: `Jasper Stephenson's personal site for projects, breakdowns, and more.` },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -14,7 +15,7 @@ module.exports = {
       { src: '/ga.js' },
     ],
   },
-  loading: { color: '#FFB400' },
+  loading: { color: '#555' },
   layoutTransition: {
     name: 'page',
   },
@@ -26,7 +27,6 @@ module.exports = {
     },
   },
   generate: {
-    dir: 'docs',
     routes: () => [
       ...posts.map(p => `posts/${p}`),
       // '/404',

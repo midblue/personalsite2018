@@ -12,6 +12,10 @@ html {
   box-sizing: border-box;
   color: $text;
   letter-spacing: $letter-spacing;
+
+  @include width (mobile) {
+    font-size: $type-base * .95;
+  }
 }
 
 body {
@@ -36,13 +40,23 @@ h1 {
   font-size: 2.7em;
   font-weight: 600;
   line-height: 1.4;
-  margin: ($grid-base * 2) 0
+  margin: ($grid-base * 2) 0;
+
+  @include width (mobile) {
+    font-size: 2.5em;
+    line-height: 1.3;
+    margin-top: 0;
+  }
 }
 
 h2 {
   font-size: 1.8em;
   margin: ($grid-base * 2) 0;
   line-height: 1.4;
+  
+  @include width (mobile) {
+    font-size: 1.5em;
+  }
 }
 
 h4 {
@@ -77,6 +91,10 @@ ul, ol {
   position: relative;
   z-index: 2;
   @include full-width-with-pad();
+
+  @include width(mobile) {
+    @include full-width-with-pad-mobile();
+  }
 }
 
 .page-title {
@@ -93,6 +111,11 @@ ul, ol {
   padding-right: $content-pad;
   margin-left: auto;
   margin-right: auto;
+
+  @include width(mobile) {
+    padding-left: $content-pad-mobile;
+    padding-right: $content-pad-mobile;
+  }
 }
 
 .video-wrapper {
@@ -120,6 +143,9 @@ ul, ol {
 .page-enter-active .page-content, //.page-leave-active .page-content, 
 .page-enter-active footer, {//.page-leave-active footer {
   transition: all .5s;
+  @include width (mobile) {
+    transition: none;
+  }
 }
 
 .page-enter .page-content, 

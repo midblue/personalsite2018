@@ -3,8 +3,9 @@ import Vuex from 'vuex'
 export default () => {
   return new Vuex.Store({
     state: {
-      userLanguage: 'en-us',
-      page: 'home'
+      userLanguage: 'ja',
+      page: 'home',
+      winWidth: -1,
     },
     mutations: {
       set (state, payload) {

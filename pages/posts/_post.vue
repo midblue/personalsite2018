@@ -73,10 +73,9 @@ export default {
   },
   watch: {},
   mounted () {
-    if (this.userLanguage.toLowerCase() === 'ja-jp' && this.s === true)
+    if (this.userLanguage.toLowerCase().indexOf('ja') !== -1 && this.s === true)
       window.location.replace('http://www.jasperstephenson.com')
     this.$store.commit('set', {
-      userLanguage: window.navigator.userLanguage || window.navigator.language,
       page: this.slug,
     })
   },
@@ -96,6 +95,17 @@ export default {
   .page-content {
     //margin-bottom: $grid-base * 15;
     @include full-width-with-pad();
+
+    @include width (mobile) {
+      @include full-width-with-pad-mobile();
+    }
+
+    h1 {
+      @include width (mobile) {
+        font-size: 2.3em;
+        margin-top: 0;
+      }
+    }
 
     .post-column {
       width: 100%;

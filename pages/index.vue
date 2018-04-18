@@ -40,14 +40,13 @@ export default {
     orderedPosts () {
       return this.postOrder.map(o => {
         const found = this.posts.find(p => p.slug === o)
-        return (this.userLanguage.toLowerCase() === 'ja-jp' && found.s === true) ? null : found
+        return (this.userLanguage.toLowerCase().indexOf('ja') !== -1 && found.s === true) ? null : found
       }).filter(p => p)
     }
   },
   watch: {},
   mounted () {
     this.$store.commit('set', {
-      userLanguage: window.navigator.userLanguage || window.navigator.language,
       page: 'home',
     })
   },
