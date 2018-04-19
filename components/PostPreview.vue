@@ -11,8 +11,8 @@
       <div class="info" :class="{padbot: !parts}">
         <!-- <time class="fade">
           {{ date }}
-        </time> -->
-        <div class="tag" :class="category">{{ category }}</div>
+        </time>
+        <div class="tag" :class="category">{{ category }}</div> -->
         <h2 class="title">
           <nuxt-link :to="`/posts/${slug}`">{{ title }}</nuxt-link>
         </h2>
@@ -55,7 +55,7 @@ export default {
   },
   computed: {
     softCharLimit () {
-      return this.winWidth > 768 ? 600 : 200
+      return this.winWidth > 768 ? 400 : 200
     },
     winWidth () { return this.$store.state.winWidth },
     clippedDescription () {
@@ -86,10 +86,9 @@ export default {
   .post {
     width: 100%;
     max-width: $max-page-width;
-    margin: 0 auto $grid-base * 15 auto;
+    margin: 0 auto $grid-base * 10 auto;
     display: grid;
-    grid-template-columns: 45% 1fr;
-    border-top: 4px solid $active;
+    grid-template-columns: 50% 1fr;
     box-shadow: $big-shadow;
     position: relative;
 
@@ -114,8 +113,16 @@ export default {
 
     .infobox {
       padding-top: $grid-base * 5;
+      padding-right: $grid-base * 10;
       flex: 1;
       background: $panel;
+
+      .title {
+        margin-bottom: $grid-base * 5;
+        a {
+          color: $text;
+        }
+      }
 
       .info {
         padding: 0 $infobox-pad-lr;

@@ -64,6 +64,7 @@ export default {
     this.$store.commit('set', {
       userLanguage: window.navigator.userLanguage || window.navigator.language,
       page: 'about',
+      pageCategory: 'about',
     })
   },
   methods: {},

@@ -48,6 +48,7 @@ export default {
   mounted () {
     this.$store.commit('set', {
       page: 'home',
+      pageCategory: 'projects',
     })
   },
   methods: {},

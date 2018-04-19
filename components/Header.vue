@@ -1,26 +1,39 @@
 <template>
   <header :class="page">
     <div class="wrapper">
+      <div class="circle"></div>
       <div class="header-content">
         <div class="flex">
-          <h1>
-            <nuxt-link exact to="/">Jasper Stephenson</nuxt-link>
-          </h1>
-        </div>
-        <div>
-          <nuxt-link to="/about" v-if="page !== 'about'" key="1">About Me</nuxt-link>
-          <nuxt-link exact to="/" v-else key="2">← Back to Home</nuxt-link>
-          <!--
-          <nuxt-link to="/about">Projects</nuxt-link>
-          |
-          <nuxt-link to="/about">Recaps</nuxt-link>
-          |
-          <nuxt-link to="/about">Breakdowns</nuxt-link>
-          | -->
+          <div>
+            <h1>
+              <nuxt-link exact to="/">Jasper Stephenson</nuxt-link>
+            </h1>
+            <div>
+              UX Engineer, Digital Tinkerer
+            </div>
+          </div>
+          <div class="tab-bar">
+            <nuxt-link
+              to="/" exact
+              class="tab"
+              :class="{active: pageCategory === 'projects'}"
+            >Projects</nuxt-link>
+
+            <nuxt-link
+              to="/writing"
+              class="tab"
+              :class="{active: pageCategory === 'writing'}"
+            >Writing</nuxt-link>
+
+            <nuxt-link
+              to="/about"
+              class="tab"
+              :class="{active: pageCategory === 'about'}"
+            >About</nuxt-link>
+          </div>
         </div>
       </div>
     </div>
-    <div class="bg"></div>
   </header>
 </template>
 
@@ -36,6 +49,7 @@ export default {
   },
   computed: {
     page () { return this.$store.state.page },
+    pageCategory () { return this.$store.state.pageCategory },
   },
   watch: {},
   mounted () {},
@@ -44,8 +58,8 @@ export default {
 </script>
 <style lang="scss" scoped>
   
-  $header-height: $grid-base * 50;
-  $header-height-mobile: $grid-base * 50;
+  $header-height: $grid-base * 40;
+  $header-height-mobile: $grid-base * 40;
 
   header {
     width: 100%;
@@ -53,30 +67,12 @@ export default {
     background-size: 100% auto;
     background-position: center top;
     background-repeat: no-repeat;
-    color: white !important;
     font-weight: 600;
     position: relative;
-    -webkit-backface-visibility: hidden;
+    border-top: 8px solid $text;
 
     @include width (mobile) {
       height: $header-height-mobile;
-    }
-  }
-
-  .bg {
-    // position: fixed;
-    background: url('~/static/images/slice.svg');
-    background-position: left 99%;
-    background-size: cover;
-    position: absolute;
-    top:0;
-    width: 100vw;
-    height: 40vw;
-    z-index: 0;
-    -webkit-backface-visibility: hidden;
-
-    @include width(mobile) {
-      height: 150vw;
     }
   }
 
@@ -84,6 +80,20 @@ export default {
     position: relative;
     display: block;
     @include full-width-with-pad();
+  }
+
+
+  $circle-diameter: $grid-base * 50;
+
+  .circle {
+    position: absolute;
+    width: $circle-diameter;
+    height: $circle-diameter;
+    z-index: 100;
+    background: linear-gradient(#57c5fb, #4c90f0);
+    border-radius: 50%;
+    transform: translate(-30%, 8%);
+    mix-blend-mode: multiply;
   }
 
   .header-content {
@@ -100,18 +110,42 @@ export default {
   }
 
   a, a:visited, a:hover, a:active {
-    color: white;
     text-decoration: underline;
+    color: $text;
+  }
+
+  .tab-bar {
+    padding-bottom: $grid-base * 3;
+  }
+
+  $tab-height: $grid-base * 8;
+
+  .tab {
+    text-decoration: none;
+    height: $tab-height;
+    margin: 0 $grid-base;
+    padding:
+      $grid-base
+      $grid-base * 3
+      $grid-base * 1.5 
+      $grid-base * 3;
+    border-radius: $tab-height / 2;
+
+    &.active {
+      color: white;
+      font-weight: 600;
+      background: $text;
+    }
   }
 
   h1 a, h1 a:visited, h1 a:hover, h1 a:active {
     text-decoration: none;
-    color: white;
   }
 
   h1, h4 {
     padding: 0;
     margin-right: $grid-base * 5;
+    margin-bottom: 0;
   }
 
   .flex {
@@ -127,5 +161,6 @@ export default {
     //   height: 100vh;
     // }
   }
+
 
 </style>

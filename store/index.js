@@ -5,6 +5,7 @@ export default () => {
     state: {
       userLanguage: 'ja',
       page: 'home',
+      pageCategory: 'projects',
       winWidth: -1,
     },
     mutations: {

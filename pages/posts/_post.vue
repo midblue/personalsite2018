@@ -77,6 +77,7 @@ export default {
       window.location.replace('http://www.jasperstephenson.com')
     this.$store.commit('set', {
       page: this.slug,
+      pageCategory: 'projects',
     })
   },
   methods: {
