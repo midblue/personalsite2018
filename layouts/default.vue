@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <div class="topline"></div>
     <Header />
     <nuxt/>
     <Footer />
@@ -33,5 +34,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+  .topline {
+    position: fixed;
+    z-index: 10;
+    height: $grid-base;
+    background: $text;
+    width: 100%;
+  }
 
 </style>

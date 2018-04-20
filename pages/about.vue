@@ -5,21 +5,21 @@
       <div class="me-pic"></div>
       <div class="right">
         <h3>
-          I'm Jasper, a UX Engineer and Designer based on the U.S. West coast.
+          Hi! I'm Jasper, a UX Engineer and Designer based on the U.S. West coast.
         </h3>
         
         <p>
           <strong>
             As a designer,
           </strong>
-          I work across the spectrum of UX, interactive, and visual design with companies like <a href="http://www.adaptivepath.com/" target="_blank">Adaptive Path</a>, <a href="https://www.bluerocket.us/" target="_blank">Blue Rocket</a> and <a href="http://beyondux.com/" target="_blank">Beyond UX</a>. I speak at and facilitate design events, such as the <nuxt-link to="/posts/globalgoalsjam" exact>2017 Tokyo Global Goals Jam</nuxt-link>. I <nuxt-link to="/posts/mentor" exact>mentor</nuxt-link> up-and-coming designers, as well as post about design topics like <nuxt-link to="/posts/hud" exact>the intersection of games and UX</nuxt-link>.
+          I work across the spectrum of UX, interactive, and visual design with companies like <a href="http://www.adaptivepath.com/" target="_blank">Adaptive Path</a>, <a href="https://www.bluerocket.us/" target="_blank">Blue Rocket</a> and <a href="http://beyondux.com/" target="_blank">Beyond UX</a>. I speak at and facilitate design events, such as the <nuxt-link to="/posts/globalgoalsjam">2017 Tokyo Global Goals Jam</nuxt-link>. I also <nuxt-link to="/posts/mentor">mentor</nuxt-link> up-and-coming designers, and occasionally find time to write about design topics like <nuxt-link to="/posts/hud">the intersection of games and UX</nuxt-link>.
         </p>
 
         <p>
           <strong>
             As a developer,
           </strong>
-          I design, build, and test full-stack experiences using tech like Vue, React, Express, and Firebase. While I lived in Tokyo, I built live prototypes of new technologies with the research team at <a href="https://research.cygames.co.jp/" target="_blank">Cygames</a>. I'm a tinkerer by nature, as evidenced by my <a href="https://github.com/midblue" target="_blank">Github page</a> full of tests and projects.
+          I design, build, and test full-stack experiences using tech like Vue, React, Express, and Firebase. While I lived in Tokyo, I built live prototypes of new technologies with the research team at <a href="https://research.cygames.co.jp/" target="_blank">Cygames</a>. I'm a tinkerer by nature, as evidenced by my <a href="https://github.com/midblue" target="_blank">Github</a> full of tests and projects.
         </p>
 
         <p>
@@ -76,16 +76,16 @@ export default {
   .me-pic {
     flex-shrink: 0;
     flex-grow: 0;
-    margin-right: $grid-base * 15;
+    margin-right: $grid-base * 8;
     overflow: hidden;
     background-image: url('~/static/images/me.jpg');
     background-size: cover;
-    background-position: bottom right;
+    background-position: center right;
     background-color: rgba($active2, .1);
     background-blend-mode: screen;
-    width: $grid-base * 80;
-    height: $grid-base * 134;
-    // border-radius: 50%;
+    width: $grid-base * 100;
+    height: $grid-base * 100;
+    border-radius: 50%;
     z-index: 3;
     position: relative;
   }
@@ -99,10 +99,8 @@ export default {
 
   .about-column {
     width: 100%;
-    background: $panel;
-    padding: $content-pad * 2 $content-pad * 2 $grid-base * 20 $content-pad * 2;
-    box-shadow: $big-shadow;
     display: flex;
+    margin-bottom: $grid-base * 40;
   }
 
   .right {
