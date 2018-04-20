@@ -1,7 +1,7 @@
 <template>
-  <header :class="page">
+  <header :class="page + ' ' + pageCategory">
     <div class="wrapper">
-      <div class="circle"></div>
+      <!--<div class="circle"></div>-->
       <div class="header-content">
         <div class="flex">
           <div>
@@ -9,8 +9,13 @@
               <nuxt-link exact to="/">Jasper Stephenson</nuxt-link>
             </h1>
             <div>
-              UX Engineer, Digital Tinkerer
+              UX Engineer, Digital Designer.
             </div>
+            <!--<div>
+              <a href="mailto:jasperstephenson@gmail.com" class="highlight">
+                Open to new opportunities!
+              </a>
+            </div>-->
           </div>
           <div class="tab-bar">
             <nuxt-link
@@ -30,6 +35,13 @@
               class="tab"
               :class="{active: pageCategory === 'about'}"
             >About</nuxt-link>
+          </div>
+          <div class="social">
+            <a href="https://medium.com/@jasper.stephenson" target="_blank"><img src="~/assets/icon-medium.svg" /></a>
+            <a href="https://github.com/midblue" target="_blank"><img src="~/assets/icon-github.svg" /></a>
+            <a href="https://www.linkedin.com/in/jasperstephenson/" target="_blank"><img src="~/assets/icon-linkedin.svg" /></a>
+            <a href="mailto:jasperstephenson@gmail.com"><img src="~/assets/icon-email.svg" /></a>
+            <a href="https://twitter.com/midblue" target="_blank"><img src="~/assets/icon-twitter.svg" /></a>
           </div>
         </div>
       </div>
@@ -58,8 +70,10 @@ export default {
 </script>
 <style lang="scss" scoped>
   
-  $header-height: $grid-base * 40;
-  $header-height-mobile: $grid-base * 40;
+  $header-height: $grid-base * 80;
+  $header-height-mobile: $grid-base * 80;
+
+  $header-height-home: $grid-base * 150;
 
   header {
     width: 100%;
@@ -70,6 +84,7 @@ export default {
     font-weight: 600;
     position: relative;
     border-top: 8px solid $text;
+    transition: all .5s;
 
     @include width (mobile) {
       height: $header-height-mobile;
@@ -78,8 +93,10 @@ export default {
 
   .wrapper {
     position: relative;
-    display: block;
     @include full-width-with-pad();
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
 
 
@@ -97,25 +114,25 @@ export default {
   }
 
   .header-content {
-    position: absolute;
-    top: 0;
-    left: 0;
     z-index: 1;
-    @include full-width-with-pad();
-    height: $header-height;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
+    transition: all .5s;
+    margin-top: $grid-base * 17;
   }
 
   a, a:visited, a:hover, a:active {
-    text-decoration: underline;
     color: $text;
+
+    &.highlight {
+      color: $active;
+    }
   }
 
-  .tab-bar {
-    padding-bottom: $grid-base * 3;
+  .tab-bar, .social {
+    margin-top: $grid-base * 2;
   }
 
   $tab-height: $grid-base * 8;
@@ -138,19 +155,40 @@ export default {
     }
   }
 
+  $icon-size: $grid-base * 4;
+
+  .social {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    height: $icon-size;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      margin-left: $grid-base * 3;
+
+      img {
+        max-width: $icon-size;
+        max-height: $icon-size;
+      }
+    }
+  }
+
   h1 a, h1 a:visited, h1 a:hover, h1 a:active {
     text-decoration: none;
   }
 
   h1, h4 {
+    margin-top: 0;
     padding: 0;
     margin-right: $grid-base * 5;
     margin-bottom: 0;
   }
 
   .flex {
+    width: 100%;
     display: flex;
-    align-items: center;
   }
 
   .about {

@@ -110,8 +110,8 @@ export default {
 
     .post-column {
       width: 100%;
-      background: $panel;
-      box-shadow: $big-shadow;
+      // background: $panel;
+      // box-shadow: $big-shadow;
     }
     
   }

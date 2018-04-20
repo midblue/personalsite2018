@@ -86,10 +86,10 @@ export default {
   .post {
     width: 100%;
     max-width: $max-page-width;
-    margin: 0 auto $grid-base * 10 auto;
+    margin: 0 auto $grid-base * 20 auto;
     display: grid;
     grid-template-columns: 50% 1fr;
-    box-shadow: $big-shadow;
+    // box-shadow: $big-shadow;
     position: relative;
 
     @include width (mobile){
@@ -107,18 +107,17 @@ export default {
         height: $grid-base * 50;
       }
     }
-
-    $infobox-pad-lr: $grid-base * 10;
+    $infobox-pad-lr: $grid-base * 8;
     $infobox-pad-lr-mobile: $grid-base * 4;
 
     .infobox {
-      padding-top: $grid-base * 5;
-      padding-right: $grid-base * 10;
+      padding-top: $grid-base * 0;
       flex: 1;
       background: $panel;
 
       .title {
         margin-bottom: $grid-base * 5;
+        margin-top: 0;
         a {
           color: $text;
         }
@@ -132,7 +131,7 @@ export default {
         }
 
         &.padbot {
-          padding-bottom: $grid-base * 8;
+          padding-bottom: $grid-base * 3;
         }
       }
       .parts {
