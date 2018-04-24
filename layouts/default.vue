@@ -2,7 +2,9 @@
   <div class="page">
     <div class="topline"></div>
     <Header />
-    <nuxt/>
+    <div class="nuxt-content">
+      <nuxt />
+    </div>
     <Footer />
   </div>
 </template>
@@ -35,12 +37,21 @@ export default {
 
 <style lang="scss" scoped>
 
+  .page {
+    // border-right: $grid-base * 1.5 solid $text;
+    // border-left: $grid-base * 1.5 solid $text;
+  }
+
   .topline {
-    position: fixed;
+    // position: fixed;
     z-index: 10;
-    height: $grid-base;
+    height: $grid-base * 1.5;
     background: $text;
     width: 100%;
+  }
+
+  .nuxt-content {
+    min-height: 80vh;
   }
 
 </style>

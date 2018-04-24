@@ -8,7 +8,7 @@
             <nuxt-link exact to="/">Jasper Stephenson</nuxt-link>
           </h1>
           <div class="fade">
-            UX Engineer, Digital Designer.
+            UX engineer, friendly ghost.<!--Digital Designer.-->
           </div>
           <!--<div>
             <a href="mailto:jasperstephenson@gmail.com" class="highlight">
@@ -16,25 +16,7 @@
             </a>
           </div>-->
         </div>
-        <div class="tab-bar">
-          <nuxt-link
-            to="/" exact
-            class="tab"
-            :class="{active: pageCategory === 'projects'}"
-          >Projects</nuxt-link>
-
-          <nuxt-link
-            to="/writing"
-            class="tab"
-            :class="{active: pageCategory === 'writing'}"
-          >Writing</nuxt-link>
-
-          <nuxt-link
-            to="/about"
-            class="tab"
-            :class="{active: pageCategory === 'about'}"
-          >About</nuxt-link>
-        </div>
+        <TabBar />
         <div class="social">
           <a href="https://medium.com/@jasper.stephenson" target="_blank"><img src="~/assets/icon-medium.svg" /></a>
           <a href="https://github.com/midblue" target="_blank"><img src="~/assets/icon-github.svg" /></a>
@@ -48,9 +30,10 @@
 </template>
 
 <script>
+import TabBar from '~/components/TabBar'
 export default {
   props: [],
-  components: {},
+  components: { TabBar, },
   data () {
     return {}
   },
@@ -67,7 +50,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  
+
   $header-height: $grid-base * 80;
 
   $header-height-collapsed: $grid-base * 25;
@@ -83,16 +66,16 @@ export default {
 
   .header-wrapper {
     z-index: 5;
-    position: sticky;
+    position: relative;
     @include full-width-with-pad();
     display: flex;
     align-items: center;
     height: $header-height;
     padding-top: $grid-base * 25;
     padding-bottom: $grid-base * 3;
-    background: rgba(white, .95);
-    position: sticky;
-    top: $header-height-collapsed - $header-height;
+    background: rgba(white, .97);
+    // position: sticky;
+    // top: $header-height-collapsed - $header-height;
   }
 
   .header-content {
@@ -102,8 +85,8 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     transition: all .5s;
-    position: sticky;
-    top: $grid-base * 6;
+    // position: sticky;
+    // top: $grid-base * 6;
   }
 
   a, a:visited, a:hover, a:active {
@@ -112,30 +95,6 @@ export default {
 
     &.highlight {
       color: $active;
-    }
-  }
-
-  .tab-bar{
-    margin-top: $grid-base * 2;
-  }
-
-  $tab-height: $grid-base * 8;
-
-  .tab {
-    text-decoration: none;
-    height: $tab-height;
-    margin: 0 $grid-base;
-    padding:
-      $grid-base
-      $grid-base * 3
-      $grid-base * 1.5 
-      $grid-base * 3;
-    border-radius: $tab-height / 2;
-
-    &.active {
-      color: white;
-      font-weight: 600;
-      background: $text;
     }
   }
 
@@ -172,15 +131,5 @@ export default {
     width: 100%;
     display: flex;
   }
-
-  .about {
-    
-    // .bg {
-    //   transform: none;
-    //   position: fixed;
-    //   height: 100vh;
-    // }
-  }
-
 
 </style>

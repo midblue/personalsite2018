@@ -126,13 +126,17 @@ export default {
 
   .aside {
     opacity: .8;
-    background: $bg;
-    padding: $grid-base * 6 $grid-base * 8;
-    margin: $grid-base * 4 auto;
+    padding: 0 $grid-base * 8;
+    border-left: 4px solid $text;
+    margin: $grid-base * 10 auto;
     position: relative;
 
     @include width (mobile) {
-      padding: $grid-base * 6 $grid-base * 4 $grid-base * 2 $grid-base * 4;
+      padding:
+        $grid-base * 6
+        $grid-base * 4
+        $grid-base * 2
+        $grid-base * 4;
     }
   }
   .asidetitle{
@@ -148,7 +152,11 @@ export default {
   .img-divider {
     width: 100%;
     height: $grid-base * 3;
-    margin: $grid-base * 11 auto $grid-base * 9 auto;
+    margin:
+      $grid-base * 11
+      auto
+      $grid-base * 9
+      auto;
   }
 
   h3 {

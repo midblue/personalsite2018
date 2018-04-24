@@ -95,6 +95,7 @@ ul, ol {
   position: relative;
   z-index: 2;
   @include full-width-with-pad();
+  min-height: 80vh;
 
   @include width(mobile) {
     @include full-width-with-pad-mobile();
@@ -146,11 +147,20 @@ ul, ol {
 .page-enter-active, //.page-leave-active, 
 .page-enter-active .page-content, //.page-leave-active .page-content, 
 .page-enter-active footer, {//.page-leave-active footer {
-  transition: all .5s;
+  transition: all .4s;
   @include width (mobile) {
     transition: none;
   }
 }
+
+// .page-leave-active, 
+// .page-leave-active .page-content, 
+// .page-leave-active footer {
+//   transition: all .2s;
+//   @include width (mobile) {
+//     transition: none;
+//   }
+// }
 
 .page-enter .page-content, 
 .page-enter.page-content, 
@@ -162,5 +172,5 @@ ul, ol {
 .page-leave-active.page-content, 
 .page-leave-active footer {
   opacity: 0;
-  transform: translateY(-20px);
+  // transform: translateY(-20px);
 }

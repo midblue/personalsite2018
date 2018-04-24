@@ -111,7 +111,6 @@ export default {
     $infobox-pad-lr-mobile: $grid-base * 4;
 
     .infobox {
-      padding-top: $grid-base * 0;
       flex: 1;
       background: $panel;
 

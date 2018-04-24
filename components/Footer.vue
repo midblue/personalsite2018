@@ -39,7 +39,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  
+
   $footer-height: $grid-base * 60;
 
   footer {

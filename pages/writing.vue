@@ -21,7 +21,7 @@ export default {
     const posts = []
     const importedPosts = require.context('~/static/posts', true, /data\.js$/)
     importedPosts.keys().forEach(key => {
-      if (importedPosts(key).category === 'projects')
+      if (importedPosts(key).category === 'writing')
         posts.push(importedPosts(key))
     })
     const postOrder = require('~/static/postorder.js')
@@ -51,8 +51,8 @@ export default {
   watch: {},
   mounted () {
     this.$store.commit('set', {
-      page: 'home',
-      pageCategory: 'projects',
+      page: 'writing',
+      pageCategory: 'writing',
     })
   },
   methods: {},

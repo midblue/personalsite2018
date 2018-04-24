@@ -32,6 +32,7 @@ export default {
     return {}
   },
   computed: {
+    pageCategory () { return this.$store.state.pageCategory },
     prevPost () {
       const slug = this.postOrder[this.thisIndex - 1] || null
       if (!slug) return null

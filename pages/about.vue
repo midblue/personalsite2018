@@ -1,5 +1,5 @@
 <template>
-  <section class="about page-content">
+  <div class="about page-content">
     <div class="about-column">
 
       <div class="me-pic"></div>
@@ -36,7 +36,7 @@
         
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

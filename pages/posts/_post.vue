@@ -77,7 +77,7 @@ export default {
       window.location.replace('http://www.jasperstephenson.com')
     this.$store.commit('set', {
       page: this.slug,
-      pageCategory: 'projects',
+      pageCategory: this.category,
     })
   },
   methods: {
@@ -113,7 +113,7 @@ export default {
       // background: $panel;
       // box-shadow: $big-shadow;
     }
-    
+
   }
 
 
