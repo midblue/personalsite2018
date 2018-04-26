@@ -6,6 +6,7 @@ $header-font-stack: "Raleway", $font-stack;
 
 $bg: #fff; //#fafafa; //#ffeb3b;
 $panel: #fff;
+$darkbg: #222;
 $active: #F26430;//#F6511D;//#840032;
 $active2: #009DDC;//#FFB400;
 $active3: #00A6ED;
@@ -16,7 +17,6 @@ $text-sub: #999;
 
 // derivative colors
 
-$darkbg: $text;
 $offpanel: darken($panel, 2%);
 $border: darken($panel, 6%);
 $border-bg: darken($bg, 6%);
@@ -26,7 +26,7 @@ $active-on-dark: desaturate(lighten($active, 3%), 0%);
 // base units
 
 $grid-base: 5px;
-$type-base: 18.5px;
+$type-base: 18px;
 
 $line-height: 1.7;
 $letter-spacing: 0.5px;
@@ -34,8 +34,8 @@ $letter-spacing: 0.5px;
 
 // sizing
 
-$max-page-width: 1300px;
-$max-text-column-width: 780px;
+$max-page-width: 1200px;
+$max-text-column-width: 750px;
 $screen-edge: $grid-base * 10;
 $text-column: $grid-base * 135;
 $content-pad: $grid-base * 8;

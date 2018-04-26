@@ -15,7 +15,7 @@ module.exports = {
       { src: '/ga.js' },
     ],
   },
-  loading: { color: '#555' },
+  loading: false,//{ color: '#555' },
   layoutTransition: {
     name: 'page',
   },

@@ -1,6 +1,6 @@
 <template>
   <section class="posts">
-    <Post
+    <PostPreview
       v-for="post in posts"
       :key="post.title"
       v-bind="post"
@@ -9,11 +9,11 @@
 </template>
 
 <script>
-import Post from '~/components/PostPreview'
+import PostPreview from '~/components/PostPreview'
 
 export default {
   props: [ 'posts', ],
-  components: { Post, },
+  components: { PostPreview, },
   data () {
     return {}
   },

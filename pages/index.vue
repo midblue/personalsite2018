@@ -34,7 +34,7 @@ export default {
     return {
       title: 'Home',
       meta: [
-        { hid: 'description', name: 'description', content: `UX Engineer, Digital Tinkerer.` },
+        { hid: 'description', name: 'description', content: `UX engineer, friendly ghost.` },
       ]
     }
   },

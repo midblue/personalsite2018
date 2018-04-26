@@ -8,18 +8,13 @@
       ></div>
     </nuxt-link>
     <div class="infobox">
-      <div class="info" :class="{padbot: !parts}">
-        <!-- <time class="fade">
-          {{ date }}
-        </time>
-        <div class="tag" :class="category">{{ category }}</div> -->
+      <div class="info padbot">
         <h2 class="title">
           <nuxt-link :to="`/posts/${slug}`">{{ title }}</nuxt-link>
         </h2>
         <summary>
           {{ clippedDescription }}
           <nuxt-link
-            v-if="!parts"
             :to="`/posts/${slug}`"
             class="inline-block"
           >
@@ -27,27 +22,13 @@
           </nuxt-link>
         </summary>
       </div>
-      <div
-        class="parts"
-        v-if="parts"
-      >
-        <nuxt-link
-          v-for="(part, index) in parts"
-          :key="index"
-          :to="`/posts/${slug}#${part}`"
-          index="index"
-          class="part"
-        >
-          Part {{ index + 1 }}: {{ part }}
-        </nuxt-link>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: [ 'title', 'slug', 'date', 'img', 'description', 'parts', 'category', ],
+  props: [ 'title', 'slug', 'date', 'img', 'description', 'category', ],
   components: {},
   data () {
     return {
@@ -123,53 +104,16 @@ export default {
       }
 
       .info {
-        padding: 0 $infobox-pad-lr;
+        padding-left: $infobox-pad-lr;
 
         @include width (mobile) {
-          padding: 0 $infobox-pad-lr-mobile;
+          padding-left: $infobox-pad-lr-mobile;
         }
 
         &.padbot {
           padding-bottom: $grid-base * 3;
         }
       }
-      .parts {
-        margin-top: $grid-base * 5;
-
-        .part {
-          display: block;
-          width: 100%;
-          //border-top: 1px solid $border;
-          border-left: 0px solid transparent;
-          padding: $grid-base * 2 $infobox-pad-lr;
-          transition: all .2s;
-
-          &:last-of-type {
-            margin-bottom: $grid-base * 10;
-            //border-bottom: 1px solid $border;
-          }
-
-          &:hover {
-            background: $offpanel;
-            border-left: $grid-base * 2 solid $active;
-          }
-        }
-      }
-    }
-
-    .tag {
-      display: inline-block;
-      background: $active;
-      color: white;
-      padding: $grid-base / 3 $grid-base;
-      line-height: 1.4;
-      text-transform: uppercase;
-      font-size: 0.75em;
-      font-weight: 800;
-      margin-right: auto;
-      // position: absolute;
-      // top:0;
-
     }
 
     summary {

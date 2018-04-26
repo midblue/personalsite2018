@@ -32,9 +32,9 @@ export default {
   },
   head () {
     return {
-      title: 'Home',
+      title: 'Writing',
       meta: [
-        { hid: 'description', name: 'description', content: `UX Engineer, Digital Tinkerer.` },
+        { hid: 'description', name: 'description', content: `UX engineer, friendly ghost.` },
       ]
     }
   },

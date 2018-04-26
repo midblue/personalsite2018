@@ -7,33 +7,33 @@
         <h3>
           Hi! I'm Jasper, a UX Engineer and Designer based on the U.S. West coast.
         </h3>
-        
+
         <p>
           <strong>
             As a designer,
           </strong>
-          I work across the spectrum of UX, interactive, and visual design with companies like <a href="http://www.adaptivepath.com/" target="_blank">Adaptive Path</a>, <a href="https://www.bluerocket.us/" target="_blank">Blue Rocket</a> and <a href="http://beyondux.com/" target="_blank">Beyond UX</a>. I speak at and facilitate design events, such as the <nuxt-link to="/posts/globalgoalsjam">2017 Tokyo Global Goals Jam</nuxt-link>. I also <nuxt-link to="/posts/mentor">mentor</nuxt-link> up-and-coming designers, and occasionally find time to write about design topics like <nuxt-link to="/posts/hud">the intersection of games and UX</nuxt-link>.
+          I work across the spectrum of UX, interactive, and visual design with companies like <a href="http://www.adaptivepath.com/" target="_blank">Adaptive Path</a>, <a href="https://www.bluerocket.us/" target="_blank">Blue Rocket</a> and <a href="http://beyondux.com/" target="_blank">Beyond UX</a>. <!--I speak at and facilitate design events, such as the <nuxt-link to="/posts/globalgoalsjam">2017 Tokyo Global Goals Jam</nuxt-link>.--> I also <nuxt-link to="/posts/mentor">mentor</nuxt-link> up-and-coming designers, and occasionally find time to <nuxt-link to="/writing">write</nuxt-link> about design topics like <nuxt-link to="/posts/hud">the intersection of games and UX</nuxt-link>.
         </p>
 
         <p>
           <strong>
             As a developer,
           </strong>
-          I design, build, and test full-stack experiences using tech like Vue, React, Express, and Firebase. While I lived in Tokyo, I built live prototypes of new technologies with the research team at <a href="https://research.cygames.co.jp/" target="_blank">Cygames</a>. I'm a tinkerer by nature, as evidenced by my <a href="https://github.com/midblue" target="_blank">Github</a> full of tests and projects.
+          I design, build, and test full-stack experiences using tech like Vue, Node, and Firebase. While I lived in Tokyo, I built prototypes of new technologies with the research team at <a href="https://research.cygames.co.jp/" target="_blank">Cygames</a>. I'm a tinkerer by nature, and I've always got a <a href="https://github.com/midblue" target="_blank">side project</a> in the works.
         </p>
 
         <p>
           <strong>
             Personally,
           </strong>
-          I've spent the last few years in Tokyo, Japan and I speak Japanese fluently. I'm a huge traveler – from 2013 to 2017 I moved to seven new places, all carrying one backpack. I'm also an esports lover: Super Smash Bros. Melee, League of Legends, Starcraft (Brood War and 2), Overwatch, speedruns – I watch it all.
+          I've spent the last few years in Tokyo, Japan (日本語も喋ります). I'm a huge traveler – from 2013 to 2017 I moved to seven new places, all carrying one backpack. I'm also an esports lover: Super Smash Bros. Melee, League of Legends, Starcraft (Brood War and 2), Overwatch, speedruns – I watch it all.
         </p>
 
         <p>
-          If you're interested in working together, or if you just want to know what I'm up to, dont hesitate to <a href="mailto:jasperstephenson@gmail.com">email me</a> or check out my 
+          If you're interested in working together, or if you just want to know what I'm up to, dont hesitate to <a href="mailto:jasperstephenson@gmail.com">email me</a> or check out my
           <a href="https://www.linkedin.com/in/jasperstephenson" target="_blank">LinkedIn page</a> to stay up to date.
         </p>
-        
+
       </div>
     </div>
   </div>
@@ -54,7 +54,7 @@ export default {
     return {
       title: 'About',
       meta: [
-        { hid: 'description', name: 'description', content: `UX Engineer, Digital Tinkerer.` },
+        { hid: 'description', name: 'description', content: `UX engineer, friendly ghost` },
       ]
     }
   },
@@ -76,7 +76,7 @@ export default {
   .me-pic {
     flex-shrink: 0;
     flex-grow: 0;
-    margin-right: $grid-base * 8;
+    margin-right: $grid-base * 12;
     overflow: hidden;
     background-image: url('~/static/images/me.jpg');
     background-size: cover;
@@ -117,7 +117,7 @@ export default {
     width: 100%;
     display: flex;
     justify-content: stretch;
-    
+
     a {
       flex: 1;
       text-align: center;

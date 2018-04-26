@@ -82,18 +82,38 @@ $tab-height: $grid-base * 8;
   height: $tab-height;
   margin: 0 $grid-base;
   padding:
-    $grid-base * .5
-    $grid-base * 3
-    $grid-base * 1
-    $grid-base * 3;
+    $grid-base * .7
+    $grid-base * 4
+    $grid-base * .8
+    $grid-base * 4;
   border-radius: $tab-height / 2;
-  transition: .15s;
+  transition: .1s;
   overflow: hidden;
   z-index: 2;
 
   &.active {
     background: $active;
     color: white;
+  }
+
+  &::before {
+    content: '';
+    z-index: 1;
+    position: absolute;
+    top:50%;
+    left:50%;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    background: rgba($active, .3);
+    transition: .15s;
+  }
+
+  &:hover::before {
+    top: -50%;
+    left: 0;
+    width: 100%;
+    height: 200%;
   }
 
   span {

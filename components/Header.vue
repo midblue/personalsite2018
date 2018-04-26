@@ -51,9 +51,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-  $header-height: $grid-base * 80;
-
-  $header-height-collapsed: $grid-base * 25;
+  $header-height: $grid-base * 70;
 
   header {
     width: 100%;
@@ -71,11 +69,9 @@ export default {
     display: flex;
     align-items: center;
     height: $header-height;
-    padding-top: $grid-base * 25;
+    padding-top: $grid-base * 20;
     padding-bottom: $grid-base * 3;
     background: rgba(white, .97);
-    // position: sticky;
-    // top: $header-height-collapsed - $header-height;
   }
 
   .header-content {
@@ -85,8 +81,6 @@ export default {
     flex-direction: column;
     align-items: flex-start;
     transition: all .5s;
-    // position: sticky;
-    // top: $grid-base * 6;
   }
 
   a, a:visited, a:hover, a:active {

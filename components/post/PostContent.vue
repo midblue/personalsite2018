@@ -151,7 +151,8 @@ export default {
 
   .img-divider {
     width: 100%;
-    height: $grid-base * 3;
+    height: $grid-base * 1.3;
+    opacity: .2;
     margin:
       $grid-base * 11
       auto
