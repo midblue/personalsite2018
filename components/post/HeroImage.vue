@@ -36,7 +36,7 @@ export default {
     object-fit: cover;
 
     @include width (mobile) {
-      height: $grid-base * 60;
+      height: $grid-base * 40;
     }
   }
 

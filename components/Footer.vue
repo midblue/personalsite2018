@@ -5,10 +5,10 @@
         <a href="mailto:jasperstephenson@gmail.com">Get in touch!</a>
       </div>
      <div>
-        All text &amp; work by Jasper Stephenson
+        All text &amp; work by Jasper Stephenson.
       </div>
       <div>
-        Static site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt.js</a>
+        Static site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt.js</a> and hosted with <a href="https://github.com/midblue/midblue.github.io" target="_blank">Github Pages</a>.
       </div>
       <div>
         <nuxt-link v-if="this.page !== 'home'" exact to="/">
@@ -39,6 +39,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+ * {
+    text-align: center;
+ }
 
   $footer-height: $grid-base * 60;
 

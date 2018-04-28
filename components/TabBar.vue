@@ -71,6 +71,11 @@ a, a:visited, a:hover, a:active {
 .tab-bar{
   margin-top: $grid-base * 1;
   position: relative;
+
+  @include width (mobile) {
+    margin-top: $grid-base * 5;
+    margin-left: $grid-base * -1;
+  }
 }
 
 $tab-height: $grid-base * 8;
@@ -92,8 +97,11 @@ $tab-height: $grid-base * 8;
   z-index: 2;
 
   &.active {
-    background: $active;
     color: white;
+
+    &::before {
+      background: $active;
+    }
   }
 
   &::before {
@@ -105,11 +113,11 @@ $tab-height: $grid-base * 8;
     border-radius: 50%;
     width: 0;
     height: 0;
-    background: rgba($active, .3);
-    transition: .15s;
+    transition: .2s;
+    background: rgba($active, .1);
   }
 
-  &:hover::before {
+  &:hover::before, &.active::before {
     top: -50%;
     left: 0;
     width: 100%;
@@ -119,6 +127,10 @@ $tab-height: $grid-base * 8;
   span {
     position: relative;
     z-index: 3;
+  }
+
+  @include width (mobile) {
+    margin-left: 0;
   }
 }
 

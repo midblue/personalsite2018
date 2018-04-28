@@ -88,50 +88,51 @@ export default {
     border-radius: 50%;
     z-index: 3;
     position: relative;
+
+    @include width (mobile) {
+      border-radius: 0;
+      width: 100%;
+      height: $grid-base * 50;
+      margin: 0;
+      background-position: 100% 40%;
+    }
   }
 
   .about {
     @include full-width-with-pad();
     position: relative;
     z-index: 2;
-    // color: white;
+    
+    @include width (mobile) {
+      @include full-width-with-pad-mobile();
+      padding: 0;
+    }
   }
 
   .about-column {
     width: 100%;
     display: flex;
     margin-bottom: $grid-base * 40;
+
+    @include width (mobile) {
+      display: block;
+      margin-bottom: $grid-base * 20;
+    }
   }
 
   .right {
     flex-shrink: 1;
     flex-grow: 1;
+
+    @include width (mobile) {
+      @include full-width-with-pad-mobile();
+      padding-top: $grid-base * 4;
+    }
   }
 
   h3 {
     padding-top: 0;
     margin-top: 0;
-  }
-
-  .links {
-    width: 100%;
-    display: flex;
-    justify-content: stretch;
-
-    a {
-      flex: 1;
-      text-align: center;
-      display: inline-block;
-      // margin: $grid-base;
-      padding: $grid-base * 2 0;
-    //   color: white;
-    //   background: $active3;
-
-    //   &:hover {
-    //     color: white;
-    //     background: $active;
-    //   }
-    }
   }
 
 </style>

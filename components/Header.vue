@@ -60,8 +60,6 @@ export default {
     transition: all .5s;
   }
 
-
-
   .header-wrapper {
     z-index: 5;
     position: relative;
@@ -72,6 +70,13 @@ export default {
     padding-top: $grid-base * 20;
     padding-bottom: $grid-base * 3;
     background: rgba(white, .97);
+
+    @include width(mobile) {
+      @include full-width-with-pad-mobile();
+      height: initial;
+      padding-top: $grid-base * 12;
+      padding-bottom: $grid-base * 6;
+    }
   }
 
   .header-content {
@@ -111,6 +116,10 @@ export default {
         max-height: $icon-size;
       }
     }
+
+    @include width (mobile) {
+      display: none;
+    }
   }
 
   h1 {
@@ -124,6 +133,10 @@ export default {
   .flex {
     width: 100%;
     display: flex;
+
+    @include width (mobile) {
+      display: grid;
+    }
   }
 
 </style>

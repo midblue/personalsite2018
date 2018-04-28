@@ -98,12 +98,12 @@ export default {
     @include full-width-with-pad();
 
     @include width (mobile) {
-      @include full-width-with-pad-mobile();
+      padding: 0;
     }
 
     h1 {
       @include width (mobile) {
-        font-size: 2.3em;
+        font-size: 1.6em;
         margin-top: 0;
       }
     }
@@ -112,6 +112,12 @@ export default {
       width: 100%;
       // background: $panel;
       // box-shadow: $big-shadow;
+    }
+
+    .content-column {
+      @include width (mobile) {
+        @include full-width-with-pad-mobile();
+      }
     }
 
   }

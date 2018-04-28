@@ -75,6 +75,7 @@ export default {
 
     @include width (mobile){
       grid-template-columns: 1fr;
+      margin-bottom: $grid-base * 10;
     }
 
     .listimg {
@@ -85,7 +86,7 @@ export default {
       height: 100%;
 
       @include width (mobile){
-        height: $grid-base * 50;
+        height: $grid-base * 30;
       }
     }
     $infobox-pad-lr: $grid-base * 8;
@@ -101,6 +102,11 @@ export default {
         a {
           color: $text;
         }
+
+        @include width (mobile) {
+          margin-top: $grid-base * 3;
+          margin-bottom: $grid-base * 2;
+        }
       }
 
       .info {
@@ -108,6 +114,7 @@ export default {
 
         @include width (mobile) {
           padding-left: $infobox-pad-lr-mobile;
+          padding-right: $infobox-pad-lr-mobile;
         }
 
         &.padbot {

@@ -37,6 +37,7 @@ $letter-spacing: 0.5px;
 $max-page-width: 1200px;
 $max-text-column-width: 750px;
 $screen-edge: $grid-base * 10;
+$screen-edge-mobile: $grid-base * 4;
 $text-column: $grid-base * 135;
 $content-pad: $grid-base * 8;
 $content-pad-mobile: $grid-base * 4;
@@ -64,9 +65,9 @@ $big-shadow: 0 5px 10px rgba($darkbg, .2);
 }
 
 @mixin full-width-with-pad-mobile () {
-  max-width: $max-page-width + 0*2;
-  padding-right: 0;
-  padding-left: 0;
+  max-width: $max-page-width + $screen-edge-mobile*2;
+  padding-right: $screen-edge-mobile;
+  padding-left: $screen-edge-mobile;
   width: 100%;
   margin: 0 auto;
 }

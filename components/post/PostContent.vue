@@ -132,10 +132,11 @@ export default {
     position: relative;
 
     @include width (mobile) {
+      margin: $grid-base * 6 $grid-base * -4;
       padding:
-        $grid-base * 6
         $grid-base * 4
-        $grid-base * 2
+        $grid-base * 4
+        $grid-base
         $grid-base * 4;
     }
   }
