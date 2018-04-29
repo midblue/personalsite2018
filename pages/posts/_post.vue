@@ -52,7 +52,9 @@ export default {
     const path = route.path.replace(/\/$/, '')
     const data = require(`~/static${path}/data.js`)
     const content = require(`~/static${path}/content.js`)
-    const postOrder = require('~/static/postorder.js')
+    const postOrder = data.category === 'writing' ?
+      require('~/static/writingorder.js') :
+      require('~/static/projectorder.js')
     return {
       ...data,
       content,

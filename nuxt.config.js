@@ -1,4 +1,7 @@
-const posts = require('./static/postorder.js')
+const posts = [
+  ...require('./static/writingorder'), 
+  ...require('./static/projectorder'),
+]
 module.exports = {
   head: {
     titleTemplate: '%s – Jasper Stephenson',

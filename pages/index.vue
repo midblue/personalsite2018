@@ -24,7 +24,7 @@ export default {
       if (importedPosts(key).category === 'projects')
         posts.push(importedPosts(key))
     })
-    const postOrder = require('~/static/postorder.js')
+    const postOrder = require('~/static/projectorder.js')
     return {
       posts,
       postOrder,

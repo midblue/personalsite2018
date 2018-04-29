@@ -24,7 +24,7 @@ export default {
       if (importedPosts(key).category === 'writing')
         posts.push(importedPosts(key))
     })
-    const postOrder = require('~/static/postorder.js')
+    const postOrder = require('~/static/writingorder.js')
     return {
       posts,
       postOrder,
