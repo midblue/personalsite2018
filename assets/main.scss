@@ -145,23 +145,26 @@ ul, ol {
   opacity: 0;
 }
 
-.page-enter-active, //.page-leave-active, 
-.page-enter-active .page-content, //.page-leave-active .page-content, 
-.page-enter-active footer, {//.page-leave-active footer {
-  transition: all .4s;
+.page-enter-active, 
+.page-enter-active .page-content, 
+.page-enter-active footer, 
+.page-leave-active,
+.page-leave-active .page-content,
+.page-leave-active footer {
+  transition: opacity .4s, transform .6s;
   @include width (mobile) {
     transition: none;
   }
 }
 
-// .page-leave-active, 
-// .page-leave-active .page-content, 
-// .page-leave-active footer {
-//   transition: all .2s;
-//   @include width (mobile) {
-//     transition: none;
-//   }
-// }
+.page-leave-active, 
+.page-leave-active .page-content, 
+.page-leave-active footer {
+  transition: all .2s;
+  @include width (mobile) {
+    transition: none;
+  }
+}
 
 .page-enter .page-content, 
 .page-enter.page-content, 

@@ -26,7 +26,7 @@
           <strong>
             Personally,
           </strong>
-          I've spent the last few years in Tokyo, Japan (日本語も喋ります). I'm a huge traveler – from 2013 to 2017 I moved to seven new places, all carrying one backpack. I'm also an esports lover: Super Smash Bros. Melee, League of Legends, Starcraft (Brood War and 2), Overwatch, speedruns – I watch it all.
+          I've spent the last few years in Tokyo, Japan (日本語も喋ります). I'm a huge traveler – from 2013 to 2017 I moved to seven new places, all carrying one backpack. I'm also an <nuxt-link to="/posts/esports7">esports lover</nuxt-link>: Super Smash Bros. Melee, League of Legends, Starcraft (Brood War and 2), Overwatch, speedruns – I watch it all.
         </p>
 
         <p>
@@ -81,8 +81,6 @@ export default {
     background-image: url('~/static/images/me.jpg');
     background-size: cover;
     background-position: center right;
-    background-color: rgba($active2, .1);
-    background-blend-mode: screen;
     width: $grid-base * 100;
     height: $grid-base * 100;
     border-radius: 50%;

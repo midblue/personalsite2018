@@ -88,23 +88,17 @@ $tab-height: $grid-base * 8;
   margin: 0 $grid-base;
   padding:
     $grid-base * .7
-    $grid-base * 4
-    $grid-base * .8
     $grid-base * 4;
   border-radius: $tab-height / 2;
-  transition: .1s;
+  transition: color .2s;
   overflow: hidden;
   z-index: 2;
 
   &.active {
     color: white;
-
-    &::before {
-      background: $active;
-    }
   }
 
-  &::before {
+  &::before, &::after {
     content: '';
     z-index: 1;
     position: absolute;
@@ -113,11 +107,16 @@ $tab-height: $grid-base * 8;
     border-radius: 50%;
     width: 0;
     height: 0;
-    transition: .2s;
+    transition: .2s cubic-bezier(0.215, 0.61, 0.355, 1);
     background: rgba($active, .1);
   }
 
-  &:hover::before, &.active::before {
+  &::after {
+    background: $active;
+    transition: .3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  &:hover::before, &.active::after {
     top: -50%;
     left: 0;
     width: 100%;
@@ -131,6 +130,11 @@ $tab-height: $grid-base * 8;
 
   @include width (mobile) {
     margin-left: 0;
+    padding:
+      $grid-base * .5
+      $grid-base * 3
+      $grid-base * .5
+      $grid-base * 3;
   }
 }
 

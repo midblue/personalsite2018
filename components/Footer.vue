@@ -1,19 +1,19 @@
 <template>
   <footer>
     <div class="footer-content">
-      <div class="padbot">
-        <a href="mailto:jasperstephenson@gmail.com">Get in touch!</a>
-      </div>
      <div>
         All text &amp; work by Jasper Stephenson.
       </div>
-      <div>
+      <div class="padbot">
         Static site built using <a href="https://nuxtjs.org/guide" target="_blank">Nuxt.js</a> and hosted with <a href="https://github.com/midblue/midblue.github.io" target="_blank">Github Pages</a>.
       </div>
-      <div>
+      <div class="padbot">
         <nuxt-link v-if="this.page !== 'home'" exact to="/">
           Back to Home
         </nuxt-link>
+      </div>
+      <div>
+        <a href="mailto:jasperstephenson@gmail.com">Get in touch!</a>
       </div>
     </div>
   </footer>
