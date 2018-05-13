@@ -1,14 +1,7 @@
-# dependencies
 node_modules
-
-# logs
-npm-debug.log
-
-# Nuxt build
 .nuxt
-
-planning
-posts
-screens
-static/posts
-static/postorder.js
+/planning
+/posts
+/screens
+/static/posts
+/static/postorder.js

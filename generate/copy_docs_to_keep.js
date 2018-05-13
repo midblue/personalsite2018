@@ -1,6 +1,6 @@
 const fs = require('fs')
-const source = './docs_to_keep/'
-const dest = '.../docs/'
+const source = './generate/docs_to_keep/'
+const dest = './docs/'
 fs.readdirSync(source)
 	.forEach(fileName => {
 		fs.copyFileSync(source + fileName, dest + fileName)
