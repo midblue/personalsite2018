@@ -65,7 +65,7 @@ module.exports = [
 	{
 		img: [
 			{
-				src: `/posts/positivity/a.jpg`,
+				src: `/posts/positivity/a.png`,
 				alt: `First github commit. Gotta start somewhere.`,
 			}
 		]
@@ -78,7 +78,7 @@ module.exports = [
 	{
 		img: [
 			{
-				src: `/posts/positivity/b.jpg`,
+				src: `/posts/positivity/b.png`,
 				alt: `You can see how aesthetics really took a back seat to just putting things on the screen.`,
 			}
 		]
@@ -102,7 +102,7 @@ module.exports = [
 	{
 		img: [
 			{
-				src: `/posts/positivity/i.jpg`,
+				src: `/posts/positivity/i.png`,
 				alt: `The version of the prototype I showed to players that night.`,
 			}
 		]
@@ -169,7 +169,7 @@ module.exports = [
 	{
 		img: [
 			{
-				src: `/posts/positivity/k.jpg`,
+				src: `/posts/positivity/k.png`,
 				alt: `What things looked like after those adjustments.`,
 			}
 		]
