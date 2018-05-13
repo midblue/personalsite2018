@@ -3,32 +3,32 @@
 
     <nuxt-link
       to="/" exact
-      class="tab"
+      class="tab bubble-out-hover"
       id="projects"
       @click.native="clickHandler('projects')"
       :class="{active: pageCategory === 'projects' }"
     >
-      <span>Projects</span>
+      <div>Projects</div>
     </nuxt-link>
 
     <nuxt-link
       to="/writing"
-      class="tab"
+      class="tab bubble-out-hover"
       id="writing"
       @click.native="clickHandler('writing')"
       :class="{active: pageCategory === 'writing' }"
     >
-      <span>Writing</span>
+      <div>Writing</div>
     </nuxt-link>
 
     <nuxt-link
       to="/about"
-      class="tab"
+      class="tab bubble-out-hover"
       id="about"
       @click.native="clickHandler('about')"
       :class="{active: pageCategory === 'about' }"
     >
-      <span>About</span>
+      <div>About</div>
     </nuxt-link>
 
   </div>
@@ -61,7 +61,7 @@ export default {
 
 a, a:visited, a:hover, a:active {
   text-decoration: none;
-  color: $text;
+  color: $active;
 
   &.active {
     color: $bg;
@@ -69,7 +69,7 @@ a, a:visited, a:hover, a:active {
 }
 
 .tab-bar{
-  margin-top: $grid-base * 1;
+  margin-top: $grid-base * 1.5;
   position: relative;
 
   @include width (mobile) {
@@ -82,48 +82,23 @@ $tab-height: $grid-base * 8;
 
 .tab {
   position: relative;
-  display: inline-block;
-  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
   height: $tab-height;
   margin: 0 $grid-base;
-  padding:
-    $grid-base * .7
-    $grid-base * 4;
+  line-height: 1;
+  padding: 0 $grid-base * 4;
   border-radius: $tab-height / 2;
-  transition: color .2s;
+  transition: color .2s, box-shadow .35s;
   overflow: hidden;
   z-index: 2;
-
+  
   &.active {
     color: white;
+    // box-shadow: $color-shadow;
   }
 
-  &::before, &::after {
-    content: '';
-    z-index: 1;
-    position: absolute;
-    top:50%;
-    left:50%;
-    border-radius: 50%;
-    width: 0;
-    height: 0;
-    transition: .2s cubic-bezier(0.215, 0.61, 0.355, 1);
-    background: rgba($active, .1);
-  }
-
-  &::after {
-    background: $active;
-    transition: .3s cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  &:hover::before, &.active::after {
-    top: -50%;
-    left: 0;
-    width: 100%;
-    height: 200%;
-  }
-
-  span {
+  div {
     position: relative;
     z-index: 3;
   }

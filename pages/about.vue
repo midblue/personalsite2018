@@ -110,7 +110,7 @@ export default {
   .about-column {
     width: 100%;
     display: flex;
-    margin-bottom: $grid-base * 40;
+    margin-bottom: $grid-base * 25;
 
     @include width (mobile) {
       display: block;

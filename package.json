@@ -7,7 +7,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate && npm run postgenerate",
+    "postgenerate": "node copy_docs_to_keep.js && git add .",
     "tlapse": "tlapse --directory ./screens/home -- localhost:3000/",
     "tlapse2": "tlapse --directory ./screens/project -- localhost:3000/posts/hud"
   },

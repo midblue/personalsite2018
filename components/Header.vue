@@ -7,7 +7,7 @@
           <h1>
             <nuxt-link exact to="/">Jasper Stephenson</nuxt-link>
           </h1>
-          <div class="fade">
+          <div>
             UX engineer, friendly ghost.<!--Digital Designer.-->
           </div>
           <!--<div>
@@ -51,7 +51,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 
-  $header-height: $grid-base * 70;
+  $header-height: $grid-base * 100;
 
   header {
     width: 100%;
@@ -67,9 +67,7 @@ export default {
     display: flex;
     align-items: center;
     height: $header-height;
-    padding-top: $grid-base * 20;
-    padding-bottom: $grid-base * 3;
-    background: rgba(white, .97);
+    padding-top: $grid-base * 10;
 
     @include width(mobile) {
       @include full-width-with-pad-mobile();
@@ -127,7 +125,7 @@ export default {
     margin-top: 0;
     padding: 0;
     margin-right: $grid-base * 5;
-    margin-bottom: 0;
+    margin-bottom: $grid-base;
   }
 
   .flex {

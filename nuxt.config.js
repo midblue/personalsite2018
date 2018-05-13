@@ -30,6 +30,7 @@ module.exports = {
     },
   },
   generate: {
+    dir: 'docs',
     routes: () => [
       ...posts.map(p => `posts/${p}`),
       // '/404',

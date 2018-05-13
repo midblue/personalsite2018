@@ -14,12 +14,16 @@
         </h2>
         <summary>
           {{ clippedDescription }}
-          <nuxt-link
-            :to="`/posts/${slug}`"
-            class="inline-block"
-          >
-            Keep reading →
-          </nuxt-link>
+          <div>
+            <nuxt-link
+              :to="`/posts/${slug}`"
+              class="keep-reading-link bubble-out-hover full-color"
+            >
+              <span>
+                Keep reading →
+              </span>
+            </nuxt-link>
+          </div>
         </summary>
       </div>
     </div>
@@ -67,7 +71,7 @@ export default {
   .post {
     width: 100%;
     max-width: $max-page-width;
-    margin: 0 auto $grid-base * 20 auto;
+    margin: 0 auto $grid-base * 22 auto;
     display: grid;
     grid-template-columns: 50% 1fr;
     // box-shadow: $big-shadow;
@@ -130,7 +134,28 @@ export default {
 
   }
 
-  .inline-block {
+  // $keep-reading-height: $grid-base * 8;
+
+  .keep-reading-link {
+    position: relative;
+    overflow: hidden;
     display: inline-block;
+    margin-top: $grid-base * 3;
+    border-radius: $grid-base * 1;
+    // height: $keep-reading-height;
+    border: 1px solid $active;
+    padding: $grid-base * 0.75 $grid-base * 2;
+    transition: .2s;
+    text-decoration: none;
+
+    span {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:hover {
+      color: white;
+      // box-shadow: $color-shadow;
+    }
   }
 </style>
