@@ -5,9 +5,7 @@
   "author": "Jasper Stephenson <jasperstephenson@gmail.com>",
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate && npm run postgenerate",
+    "generate": "nuxt generate",
     "postgenerate": "node ./generate/copy_docs_to_keep.js",
     "tlapse": "tlapse --directory ./screens/home -- localhost:3000/",
     "tlapse2": "tlapse --directory ./screens/project -- localhost:3000/posts/hud"
