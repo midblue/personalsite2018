@@ -12,7 +12,7 @@
           <strong>
             As a designer,
           </strong>
-          I work across the spectrum of UX, interactive, and visual design with companies like <a href="http://www.adaptivepath.com/" target="_blank">Adaptive Path</a>, <a href="https://www.bluerocket.us/" target="_blank">Blue Rocket</a> and <a href="http://beyondux.com/" target="_blank">Beyond UX</a>. <!--I speak at and facilitate design events, such as the <nuxt-link to="/posts/globalgoalsjam">2017 Tokyo Global Goals Jam</nuxt-link>.--> I also <nuxt-link to="/posts/mentor">mentor</nuxt-link> up-and-coming designers, and occasionally find time to <nuxt-link to="/writing">write</nuxt-link> about design topics like <nuxt-link to="/posts/hud">the intersection of games and UX</nuxt-link>.
+          I work across the spectrum of UX, interactive, and visual design with companies like <a href="http://www.adaptivepath.com/" target="_blank">Adaptive Path</a>, <a href="https://www.bluerocket.us/" target="_blank">Blue Rocket</a> and <a href="http://beyondux.com/" target="_blank">Beyond UX</a>. I also <nuxt-link to="/posts/mentor">mentor</nuxt-link> up-and-coming designers, and occasionally find time to <nuxt-link to="/writing">write</nuxt-link> about design topics like <nuxt-link to="/posts/gameux">the intersection of games and UX</nuxt-link>.
         </p>
 
         <p>
@@ -100,6 +100,7 @@ export default {
     @include full-width-with-pad();
     position: relative;
     z-index: 2;
+    min-height: 0;
     
     @include width (mobile) {
       @include full-width-with-pad-mobile();
