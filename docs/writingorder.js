@@ -1,9 +1,9 @@
 module.exports = [
   'spectrum',
   `mentor`,
+  `gameux`,
   `esports7`,
   // `uxengineer`,
-  // `gameux`,
   // `globalgoalsjam`,
   `hud`,
 ]
