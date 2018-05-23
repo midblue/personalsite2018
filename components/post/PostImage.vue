@@ -1,17 +1,14 @@
 <template>
   <div
     class="post-image"
-    :style="`max-height: ${maxHeight + 100}px`"
   >
     <img
       ref="image"
       :src="src"
       :alt="alt"
-      :width="width"
-      :height="height"
       @click="lightbox"
     />
-    <div class="caption" v-if="alt" :style="`max-width: ${width}px`">
+    <div class="caption" v-if="alt || link">
       {{ alt }}
       <span v-if="link">
         (<a :href="link" target="_blank">Source</a>)
@@ -25,38 +22,9 @@ export default {
   props: [ 'src', 'alt', 'source', 'link' ],
   components: {},
   data () {
-    return {
-      maxHeight: 500,
-      width: null,
-      height: null,
-      naturalWidth: 800,
-      naturalHeight: 500,
-    }
+    return {}
   },
-  computed: {
-    maxWidth () { return parseInt(this.$el.getBoundingClientRect().width) },
-    aspectRatio () { return this.naturalWidth / this.naturalHeight },
-    containerAspectRatio () { return this.maxWidth / this.maxHeight }
-  },
-  watch: {
-    naturalWidth () { this.$nextTick(() => this.calculateWidthAndHeight()) },
-  },
-  mounted () {},
   methods: {
-    calculateWidthAndHeight () {
-      if (this.naturalWidth <= this.maxWidth && this.naturalHeight <= this.maxHeight) {
-        this.width = this.naturalWidth
-        this.height = this.naturalHeight
-      }
-      if (this.aspectRatio > this.containerAspectRatio) {
-        this.width = this.maxWidth
-        this.height = this.maxWidth / this.aspectRatio
-      }
-      else {
-        this.height = this.maxHeight
-        this.width = this.maxHeight * this.aspectRatio
-      }
-    },
     lightbox () {
       this.$emit('lightbox', this.src)
     }
@@ -86,6 +54,7 @@ export default {
     font-size: .75em;
     text-align: center;
     transition: opacity .2s;
+    max-width: 500px;
   }
 
 

@@ -120,7 +120,7 @@ module.exports = [
 		img: [
 			{
 				src: '/posts/gameux/6.jpg',
-				alt: 'A puzzle in The Witness',
+				alt: 'A puzzle in The Witness.',
 				link: 'https://www.gamepur.com/guide/21923-witness-walkthrough-part-10-swamp-submerged-rooms-and-laser-beam.html'
 			}
 		]
@@ -138,7 +138,7 @@ module.exports = [
 	{
 		p: [
 			`There are, of course, many other ways that UX adapts for a game environment – such as the scale of prototypes (think Steam's Early Access program) and designing for multiple different user perspectives on the same scene – but that's for another article. (Part 2? Maybe!)`,
-			`I also want to take a moment to mention just how few articles and breakdowns about game UX are actually being published. It's clear (link to list of companies) that UX is being pursued in game companies worldwide, so let's continue to advance the discipline! I encourage more game UX teams to write about the challenges and solutions they encounter in their work, so that we can all benefit and make better games.`,
+			`I also want to take a moment to mention just how few articles and breakdowns about game UX are actually being published. <a href="https://sinclair.work/uxlist/" target="_blank">It's clear</a> that UX is being pursued in game companies worldwide, so let's continue to advance the discipline! I encourage more game UX teams to write about the challenges and solutions they encounter in their work, so that we can all benefit and make better games.`,
 			`Thanks for reading!`
 		]
 	}
