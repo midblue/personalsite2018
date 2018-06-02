@@ -12,6 +12,7 @@
     "tlapse2": "tlapse --directory ./screens/project -- localhost:3000/posts/hud"
   },
   "dependencies": {
+    "@nuxtjs/google-analytics": "^2.0.2",
     "css-loader": "^0.28.11",
     "node-sass": "^4.8.3",
     "npm": "^6.0.0",

@@ -13,15 +13,17 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
-    script: [
-      { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=UA-112989318-1' },
-      { src: '/ga.js' },
-    ],
+    script: [],
   },
   loading: false,//{ color: '#555' },
   layoutTransition: {
     name: 'page',
   },
+  modules: [
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-112989318-1'
+    }]
+  ],
   css: ['./assets/main.scss'],
   build: {
     post: [ 'postPlugins', ],
