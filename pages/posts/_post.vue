@@ -1,9 +1,6 @@
 <template>
   <div>
-    <Lightbox
-      :src="lightboxSrc"
-      @close="lightboxSrc = null"
-    />
+    <Lightbox />
     <div class="page-content">
       <div class="post-column">
         <Nav
@@ -13,7 +10,6 @@
         <HeroImage
           :src="img"
           :alt="'Header image – ' + title"
-          @lightbox="lightbox"
         />
         <div class="content-column">
           <h1 class="page-title centered-in-column">
@@ -21,7 +17,6 @@
           </h1>
           <PostContent
             :content="content"
-            @lightbox="lightbox"
           />
         </div>
       </div>
@@ -45,7 +40,6 @@ export default {
   data () {
     return {
       parts: this.parts || null,
-      lightboxSrc: null,
     }
   },
   asyncData ({ route }) {
@@ -83,12 +77,6 @@ export default {
     })
   },
   methods: {
-    lightbox (src) {
-      const fullSrc = (src.indexOf('full') === -1) ?
-        src.substring(0, src.lastIndexOf('/')) + '/full' + src.substring(src.lastIndexOf('/'))
-        : src
-      this.lightboxSrc = fullSrc
-    },
   },
 }
 </script>

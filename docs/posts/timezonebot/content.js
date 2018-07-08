@@ -48,7 +48,7 @@ module.exports = [
 	},
 	{
 		p: [
-			`Bots in a chat channel can be like flies buzzing around the edges of your conversation, often serving more as a distraction than a help. Thus, it was imperative to me that my timezone bot be very careful about when it sends messages and how it chooses to interpret messages from humans. There were two major steps I took to make the bot "just work" without a learning curve, and to minimize unuseful messages.`
+			`Bots in a chat channel can be like flies hanging around the edges of your conversation, often serving more as a distraction than a help. Thus, it was imperative to me that my timezone bot be very careful about when it sends messages and how it chooses to interpret messages from humans. There were two major steps I took to make the bot "just work" without a learning curve, and to minimize unuseful messages.`
 		]
 	},
 	{
@@ -56,14 +56,14 @@ module.exports = [
 	},
 	{
 		p: [
-			`There are only certain times when users needed the information about what timezone their chat partner was in. For example, they don't need to know it when the user is in a very close-by timezone to them. They also usually don't need to know it when they're already in conversation with that person, or when they're not talking directly to that person. With that in mind, I implemented a system that would interject with a user's timezone ONLY if:`
+			`There are only certain times when users need to know their chat partner's time zone. For example, they don't need to know it when the user is in a very close-by timezone to them. They also usually don't need to know it when they're already in conversation with that person, or when they're not talking directly to that person. With that in mind, I implemented a system that would interject with a user's timezone ONLY if:`
 		]
 	},
 	{
 		ol: [
 			`The sender directly messaged the recipient using @`,
 			`The sender's timezone is more than 2 hours apart from the targeted recipient`,
-			`The recipient has not sent a message in the channel in the past hour`
+			`The recipient has not sent a message and the recipient's timezone has not been announced in the channel in the past hour`
 		]
 	},
 	{

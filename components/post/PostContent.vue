@@ -75,7 +75,6 @@
         v-if="element.img"
         v-for="(image, imgIndex) in element.img"
         v-bind="image"
-        @lightbox="lightbox"
       />
       <div
         :key="index"
@@ -113,9 +112,7 @@ export default {
   computed: {},
   watch: {},
   mounted () {},
-  methods: {
-    lightbox (src) { this.$emit('lightbox', src) },
-  },
+  methods: {},
 }
 </script>
 <style lang="scss" scoped>

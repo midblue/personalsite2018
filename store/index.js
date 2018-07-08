@@ -7,6 +7,7 @@ export default () => {
       page: 'home',
       pageCategory: 'projects',
       winWidth: -1,
+      lightboxSrc: null,
     },
     mutations: {
       set (state, payload) {

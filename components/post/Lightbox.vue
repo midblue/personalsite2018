@@ -1,27 +1,33 @@
 <template>
   <div
     class="lightbox"
-    :class="{on: src ? true : false}"
-    @click="$emit('close')"
+    :class="{on: lightboxSrc ? true : false}"
+    @click="close"
   >
     <img
       ref="image"
-      :src="src"
+      :src="lightboxSrc"
     />
   </div>
 </template>
 
 <script>
 export default {
-  props: [ 'src', ],
+  props: [],
   components: {},
   data () {
     return {}
   },
-  computed: {},
+  computed: {
+    lightboxSrc () { return this.$store.state.lightboxSrc },
+  },
   watch: {},
   mounted () {},
-  methods: {},
+  methods: {
+    close () {
+      this.$store.commit('set', { lightboxSrc: null })
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>
@@ -41,6 +47,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: zoom-out;
 
     &.on {
       opacity: 1;

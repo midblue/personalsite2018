@@ -1,18 +1,25 @@
 <template>
   <div class="page-content" v-if="orderedPosts">
+    <Lightbox />
     <PostList
-      :posts="orderedPosts || posts"
+      :posts="orderedPosts"
+    />
+    <ImageGallery
+      title="Extras"
+      :images="galleryImages"
     />
   </div>
 </template>
 
 <script>
 import PostList from '~/components/PostList'
+import ImageGallery from '~/components/ImageGallery'
+import Lightbox from '~/components/post/Lightbox'
 import Nav from '~/components/Nav'
 
 export default {
   props: [],
-  components: { PostList, Nav, },
+  components: { PostList, Nav, ImageGallery, Lightbox, },
   data () {
     return {
     }
@@ -25,9 +32,11 @@ export default {
         posts.push(importedPosts(key))
     })
     const postOrder = require('~/static/projectorder.js')
+    const galleryImages = require('~/static/galleryimages.js')
     return {
       posts,
       postOrder,
+      galleryImages,
     }
   },
   head () {
@@ -59,6 +68,6 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>
