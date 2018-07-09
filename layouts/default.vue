@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <Lightbox />
     <div class="topline"></div>
     <Header />
     <div class="nuxt-content">
@@ -12,8 +13,10 @@
 <script>
 import Footer from '~/components/Footer'
 import Header from '~/components/Header'
+import Lightbox from '~/components/Lightbox'
+
 export default {
-  components: { Header, Footer, },
+  components: { Header, Footer, Lightbox, },
   computed: {
     winWidth () { return this.$store.state.winWidth },
   },

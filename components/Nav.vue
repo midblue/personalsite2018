@@ -80,13 +80,13 @@ export default {
       &.highlight {
         background: $active;
         .line{
-          background: $panel;
+          background: $bg;
         }
         .dot{
-          background: $panel;
+          background: $bg;
         }
         .title a {
-          color: $panel !important;
+          color: $bg !important;
           background: $active;
           font-weight: 600;
         }
@@ -140,7 +140,7 @@ export default {
         a {
           display: block;
           height: 100%;
-          background: $panel;
+          background: $bg;
           padding-left: $grid-base * 2;
           padding-right: 200px;
           margin-right: -200px;

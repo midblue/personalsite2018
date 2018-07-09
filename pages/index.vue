@@ -1,11 +1,10 @@
 <template>
   <div class="page-content" v-if="orderedPosts">
-    <Lightbox />
     <PostList
       :posts="orderedPosts"
     />
     <ImageGallery
-      title="Extras"
+      title="Extras!"
       :images="galleryImages"
     />
   </div>
@@ -14,12 +13,11 @@
 <script>
 import PostList from '~/components/PostList'
 import ImageGallery from '~/components/ImageGallery'
-import Lightbox from '~/components/post/Lightbox'
 import Nav from '~/components/Nav'
 
 export default {
   props: [],
-  components: { PostList, Nav, ImageGallery, Lightbox, },
+  components: { PostList, Nav, ImageGallery, },
   data () {
     return {
     }

@@ -83,7 +83,7 @@ export default {
     }
 
     .listimg {
-      background-color: $bg;
+      background: $off-bg;
       background-size: cover;
       background-position: center center;
       flex-shrink: 0;
@@ -98,7 +98,7 @@ export default {
 
     .infobox {
       flex: 1;
-      background: $panel;
+      background: $bg;
 
       .title {
         margin-bottom: $grid-base * 5;

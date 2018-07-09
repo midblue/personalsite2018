@@ -33,11 +33,7 @@ export default {
   mounted () {},
   methods: {
     lightbox (src) {
-      this.$store.commit('set', { 
-        lightboxSrc: (src.indexOf('full') === -1) ?
-          src.substring(0, src.lastIndexOf('/')) + '/full' + src.substring(src.lastIndexOf('/')) :
-          src
-      })
+      this.$store.commit('set', { lightboxSrc: src })
     }
   },
 }
@@ -79,6 +75,7 @@ export default {
       }
 
       .image {
+        background-color: $off-bg;
         transform: scale(1);
         background-size: cover;
         background-position: top center;

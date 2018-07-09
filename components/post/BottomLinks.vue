@@ -70,7 +70,7 @@ export default {
       position: relative;
       background-size: cover;
       background-position: center center;
-      color: $panel;
+      color: $bg;
       text-decoration: none;
 
       &::after {

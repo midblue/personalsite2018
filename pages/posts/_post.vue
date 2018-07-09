@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Lightbox />
     <div class="page-content">
       <div class="post-column">
         <Nav
@@ -33,10 +32,9 @@ import HeroImage from '~/components/post/HeroImage'
 import Nav from '~/components/Nav'
 import PostContent from '~/components/post/PostContent'
 import BottomLinks from '~/components/post/BottomLinks'
-import Lightbox from '~/components/post/Lightbox'
 export default {
   props: [],
-  components: { HeroImage, Nav, PostContent, BottomLinks, Lightbox, },
+  components: { HeroImage, Nav, PostContent, BottomLinks, },
   data () {
     return {
       parts: this.parts || null,
@@ -100,7 +98,7 @@ export default {
 
     .post-column {
       width: 100%;
-      // background: $panel;
+      // background: $bg;
       // box-shadow: $big-shadow;
     }
 

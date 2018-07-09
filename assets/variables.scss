@@ -5,7 +5,7 @@ $header-font-stack: "Raleway", $font-stack;
 // base colors
 
 $bg: #fff; //#fafafa; //#ffeb3b;
-$panel: #fff;
+$off-bg: #eee;
 $active: #e86231;//#F26430;
 $active2: #009DDC;//#FFB400;
 $darkbg: #222;
@@ -15,8 +15,8 @@ $text-sub: #999;
 
 // derivative colors
 
-$offpanel: darken($panel, 2%);
-$border: darken($panel, 6%);
+$offpanel: darken($bg, 2%);
+$border: darken($bg, 6%);
 $border-bg: darken($bg, 6%);
 $active-on-dark: desaturate(lighten($active, 3%), 0%);
 

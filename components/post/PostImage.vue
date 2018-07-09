@@ -26,11 +26,7 @@ export default {
   },
   methods: {
     lightbox () {
-      this.$store.commit('set', { 
-        lightboxSrc: (this.src.indexOf('full') === -1) ?
-          this.src.substring(0, this.src.lastIndexOf('/')) + '/full' + this.src.substring(this.src.lastIndexOf('/')) :
-          this.src
-      })
+      this.$store.commit('set', { lightboxSrc: this.src })
     }
   },
 }
