@@ -1,8 +1,8 @@
 module.exports = [
   `positivity`,
   `timezonebot`,
-  `monitor`,
+  `internalapp`,
   `verbose`,
+  `monitor`,
   `beach`,
-  // `staticsite`,
 ]

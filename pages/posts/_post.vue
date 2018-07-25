@@ -65,10 +65,13 @@ export default {
     userLanguage () { return this.$store.state.userLanguage },
     thisIndex () { return this.postOrder.indexOf(this.slug) },
   },
-  watch: {},
+  watch: {
+    userLanguage (newLanguage) {
+      if (newLanguage.toLowerCase().indexOf('ja') !== -1 && this.s === true)
+        window.location.replace('http://www.jasperstephenson.com')
+    }
+  },
   mounted () {
-    if (this.userLanguage.toLowerCase().indexOf('ja') !== -1 && this.s === true)
-      window.location.replace('http://www.jasperstephenson.com')
     this.$store.commit('set', {
       page: this.slug,
       pageCategory: this.category,

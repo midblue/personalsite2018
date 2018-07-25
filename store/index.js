@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 export default () => {
   return new Vuex.Store({
     state: {
-      userLanguage: 'ja',
+      userLanguage: '',
       page: 'home',
       pageCategory: 'projects',
       winWidth: -1,

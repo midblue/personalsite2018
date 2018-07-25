@@ -46,6 +46,7 @@ export default {
     max-height: 500px;
     margin: 0 auto;
     border: 1px solid $border;
+    cursor: zoom-in;
   }
 
   .caption {
