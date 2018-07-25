@@ -1,5 +1,5 @@
 module.exports = {
-  title: `Square One: Bringing UX Research to an Unfamiliar Audience`,
+  title: `Bringing UX Research to an Unfamiliar Audience`,
   slug: `internalapp`,
   category: `projects`,
   s: true,
