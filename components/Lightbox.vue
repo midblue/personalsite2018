@@ -97,7 +97,7 @@ export default {
     height: $radius;
     border-radius: $radius / 2;
     // background: $off-bg;
-    border-right: $width solid rgba(#555, .8);
+    border-right: $width solid rgba(#eee, .8);
     border-left: $width solid rgba(#eee, .8); 
     border-top: $width solid transparent;
     border-bottom: $width solid transparent;   
