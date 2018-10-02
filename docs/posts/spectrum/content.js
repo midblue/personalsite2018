@@ -37,9 +37,6 @@ module.exports = [
 		]
 	},
 	{
-		line: true
-	},
-	{
 		h2: `1. Single-Focus Design Roles`
 	},
 	{
