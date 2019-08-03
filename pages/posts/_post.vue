@@ -49,7 +49,7 @@ export default {
         { property: 'og:title', content: this.title },
         { hid: `og:type`, property: 'og:type', content: 'article' },
         {
-          property: 'description',
+          property: 'og:description',
           content: this.description,
           hid: `description`,
         },
