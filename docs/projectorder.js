@@ -1,4 +1,5 @@
 module.exports = [
+  `safespace`,
   `positivity`,
   `timezonebot`,
   `internalapp`,
