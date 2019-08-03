@@ -46,7 +46,7 @@ module.exports = [
   },
   {
     p: [
-      `...Hang on, doesn't that sound like something a bot could do? That thought get me started, and before long I saw a few opportunities:`,
+      `...Hang on, doesn't that sound like something a bot could do? That thought got me started, and before long I saw a few opportunities:`,
     ],
   },
   {
