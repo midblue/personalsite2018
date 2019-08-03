@@ -38,7 +38,7 @@ module.exports = [
   {
     p: [
       `She was summarily cancelled, and rightly so.`,
-      `However, these messages in the screenshot had to be manually searched for. Who knows how much hate speech is being gotten away with on Discord simply because no one has never bothered to look for it?`,
+      `However, these messages in the screenshot had to be manually searched for. Who knows how much hate speech is being ignored on Discord simply because no one has ever bothered to look for it?`,
     ],
   },
   {
