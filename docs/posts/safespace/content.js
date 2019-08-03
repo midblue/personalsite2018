@@ -24,7 +24,7 @@ module.exports = [
   },
   {
     p: [
-      `It searches through any given user's comment history on Reddit for the N word, and calls them out publically. I thought this was a fantastic idea. In order to make a tolerant, accepting community, it's important to hold people accountable for their words and to make a clear statement that hate speech is not okay.`,
+      `It searches through any given user's comment history on Reddit for the N word, and calls them out publicly. I thought this was a fantastic idea. In order to make a tolerant, accepting community, it's important to hold people accountable for their words and to make a clear statement that hate speech is not okay.`,
       `Then I thought about <a href="https://www.dailydot.com/parsec/bocchi-smash-bros-racial-slur/" target="_blank">this recent debacle</a> in the Super Smash Brothers scene. An up-and-coming competitor was caught using racial slurs in Discord.`,
     ],
   },
