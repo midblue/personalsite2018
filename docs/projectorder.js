@@ -1,4 +1,5 @@
 module.exports = [
+  `tcu`,
   `safespace`,
   `positivity`,
   `timezonebot`,
