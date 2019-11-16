@@ -4,8 +4,8 @@
       <div class="me-pic"></div>
       <div class="right">
         <h3>
-          Hi! I'm Jasper, a UX Engineer and Designer based on the U.S. West
-          coast.
+          Hi! I'm Jasper, a UX Engineer and Designer based in Kyoto and on the
+          U.S. West coast.
         </h3>
 
         <p>
