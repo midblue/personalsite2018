@@ -3,49 +3,57 @@
     <div class="about-column">
       <div class="me-pic"></div>
       <div class="right">
-        <h3>Hi! I'm Jasper, a UX Engineer and Designer based on the U.S. West coast.</h3>
+        <h3>
+          Hi! I'm Jasper, a UX Engineer and Designer based on the U.S. West
+          coast.
+        </h3>
 
         <p>
           <strong>As a designer,</strong>
-          I work across the spectrum of UX, interactive, and visual design with companies like
-          <a
-            href="https://www.adobe.com/"
-            target="_blank"
-          >Adobe</a> and
-          <a href="http://www.adaptivepath.com/" target="_blank">Adaptive Path</a>. I also
-          <nuxt-link to="/posts/mentor">mentor</nuxt-link>up-and-coming designers, and occasionally find time to
-          <nuxt-link to="/writing">write</nuxt-link>about design topics like
-          <nuxt-link to="/posts/gameux">the intersection of games and UX</nuxt-link>.
+          I work across the spectrum of UX, interactive, and visual design with
+          companies like
+          <a href="https://www.adobe.com/" target="_blank">Adobe</a> and
+          <a href="http://www.adaptivepath.com/" target="_blank"
+            >Adaptive Path</a
+          >. I also
+          <nuxt-link to="/posts/mentor">mentor</nuxt-link> up-and-coming
+          designers, and occasionally find time to
+          <nuxt-link to="/writing">write</nuxt-link> about design topics like
+          <nuxt-link to="/posts/gameux"
+            >the intersection of games and UX</nuxt-link
+          >.
         </p>
 
         <p>
           <strong>As a developer,</strong>
-          I design, build, and test full-stack experiences using tech like Vue, Node, and Firebase. While I lived in Tokyo, I built prototypes of new technologies with the research team at
-          <a
-            href="https://research.cygames.co.jp/"
-            target="_blank"
-          >Cygames</a>. I'm a tinkerer by nature, and I've always got a
-          <a
-            href="https://github.com/midblue"
-            target="_blank"
-          >side project</a> in the works.
+          I design, build, and test full-stack experiences using tech like Vue,
+          Node, and Firebase. While I lived in Tokyo, I built prototypes of new
+          technologies with the research team at
+          <a href="https://research.cygames.co.jp/" target="_blank">Cygames</a>.
+          I'm a tinkerer by nature, and I've always got a
+          <a href="https://github.com/midblue" target="_blank">side project</a>
+          in the works.
         </p>
 
         <p>
           <strong>Personally,</strong>
-          I've spent the last few years living in Japan (日本語も喋ります). I'm a huge traveler – from 2013 to 2017 I moved to seven new places, all carrying one backpack. I'm also an
-          <nuxt-link to="/posts/esports7">esports lover</nuxt-link>: Super Smash Bros. Melee, League of Legends, Starcraft (Brood War and 2), Overwatch, speedruns – I watch it all.
+          I've spent the last few years living in Japan (日本語も喋ります). I'm
+          a huge traveler – from 2013 to 2017 I moved to seven new places, all
+          carrying one backpack. I'm also an
+          <nuxt-link to="/posts/esports7">esports lover</nuxt-link>: Super Smash
+          Bros. Melee, League of Legends, Starcraft (Brood War and 2),
+          Overwatch, speedruns – I watch it all.
         </p>
 
         <p>
-          If you're interested in working together, or if you just want to know what I'm up to, don't hesitate to
-          <a
-            href="mailto:jasperstephenson@gmail.com"
-          >email me</a> or check out my
-          <a
-            href="https://www.linkedin.com/in/jasperstephenson"
-            target="_blank"
-          >LinkedIn</a> to stay up to date.
+          If you're interested in working together, or if you just want to know
+          what I'm up to, don't hesitate to
+          <a href="mailto:jasperstephenson@gmail.com">email me</a> or check out
+          my
+          <a href="https://www.linkedin.com/in/jasperstephenson" target="_blank"
+            >LinkedIn</a
+          >
+          to stay up to date.
         </p>
       </div>
     </div>
