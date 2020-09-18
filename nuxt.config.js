@@ -3,7 +3,6 @@ const posts = [
   ...require('./static/projectorder'),
 ]
 module.exports = {
-	target: 'static',
   head: {
     titleTemplate: '%s – Jasper Stephenson',
     meta: [
@@ -28,16 +27,16 @@ module.exports = {
       {
         id: 'UA-112989318-1',
       },
-		],
-		'@nuxtjs/markdownit'
-	],
-	markdownit: {
-		injected: true,
-		html: true,
-		linkify: true,
-		typographer: true,
-		breaks: true
-	},
+    ],
+    '@nuxtjs/markdownit',
+  ],
+  markdownit: {
+    injected: true,
+    html: true,
+    linkify: true,
+    typographer: true,
+    breaks: true,
+  },
   css: ['./assets/main.scss'],
   build: {
     styleResources: {
@@ -47,7 +46,7 @@ module.exports = {
   generate: {
     dir: 'docs',
     routes: () => [
-      ...posts.map((p) => `posts/${p}`),
+      ...posts.map(p => `posts/${p}`),
       // '/404',
     ],
   },

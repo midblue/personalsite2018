@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/autochess", {data:[],fetch:[],mutations:[]});
