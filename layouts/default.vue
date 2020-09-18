@@ -54,7 +54,8 @@ export default {
   }
 
   .nuxt-content {
-    min-height: 50vh;
+		min-height: 50vh;
+		max-width: 100vw;
   }
 
 </style>

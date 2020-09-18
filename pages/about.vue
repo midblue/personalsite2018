@@ -4,8 +4,7 @@
       <div class="me-pic"></div>
       <div class="right">
         <h3>
-          Hi! I'm Jasper, a UX Engineer and Designer based in Kyoto and on the
-          U.S. West coast.
+          Hi! I'm Jasper, a UX Engineer and Designer based in Kyoto, Amsterdam, and San Francisco.
         </h3>
 
         <p>
@@ -31,7 +30,7 @@
           technologies with the research team at
           <a href="https://research.cygames.co.jp/" target="_blank">Cygames</a>.
           I'm a tinkerer by nature, and I've always got a
-          <a href="https://github.com/midblue" target="_blank">side project</a>
+          <nuxt-link to="/labs">side project</nuxt-link>
           in the works.
         </p>
 
@@ -101,7 +100,7 @@ export default {
   flex-grow: 0;
   margin-right: $grid-base * 12;
   overflow: hidden;
-  background-image: url('~/static/images/me.jpg');
+  background-image: url('/images/me.jpg');
   background-size: cover;
   background-position: center right;
   width: $grid-base * 100;

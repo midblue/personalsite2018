@@ -18,11 +18,11 @@
         </div>
         <TabBar />
         <div class="social">
-          <a href="https://medium.com/@jasper.stephenson" target="_blank"><img src="~/assets/icon-medium.svg" /></a>
+          <!-- <a href="https://medium.com/@jasper.stephenson" target="_blank"><img src="~/assets/icon-medium.svg" /></a> -->
           <a href="https://github.com/midblue" target="_blank"><img src="~/assets/icon-github.svg" /></a>
-          <a href="https://www.linkedin.com/in/jasperstephenson/" target="_blank"><img src="~/assets/icon-linkedin.svg" /></a>
+          <!-- <a href="https://www.linkedin.com/in/jasperstephenson/" target="_blank"><img src="~/assets/icon-linkedin.svg" /></a> -->
           <a href="mailto:jasperstephenson@gmail.com"><img src="~/assets/icon-email.svg" /></a>
-          <a href="https://twitter.com/midblue" target="_blank"><img src="~/assets/icon-twitter.svg" /></a>
+          <!-- <a href="https://twitter.com/midblue" target="_blank"><img src="~/assets/icon-twitter.svg" /></a> -->
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ export default {
   $icon-size: $grid-base * 4;
 
   .social {
-    margin-top: $grid-base * 3;
+    margin-top: $grid-base * 3.5;
     flex: 1;
     display: flex;
     justify-content: flex-end;

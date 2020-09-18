@@ -12,27 +12,16 @@
     "tlapse2": "tlapse --directory ./screens/project -- localhost:3000/posts/hud"
   },
   "dependencies": {
-    "@nuxtjs/google-analytics": "^2.0.2",
-    "css-loader": "^0.28.11",
-    "node-sass": "^4.12.0",
-    "npm": "^6.0.0",
-    "nuxt": "^1.4.0",
-    "sass-loader": "^6.0.7",
-    "sharp": "^0.23.0",
-    "vue-style-loader": "^3.1.2"
+    "@nuxtjs/google-analytics": "^2.4.0",
+    "@nuxtjs/markdownit": "^1.2.10",
+    "css-loader": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "npm": "^6.14.8",
+    "nuxt": "^2.13.3",
+    "sass-loader": "^10.0.2",
+    "sharp": "^0.23.4"
   },
-  "devDependencies": {
-    "babel-eslint": "^7.2.3",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-loader": "^1.9.0",
-    "eslint-plugin-html": "^4.0.3",
-    "eslint-plugin-import": "^2.11.0",
-    "eslint-plugin-node": "^5.1.1",
-    "eslint-plugin-promise": "^3.7.0",
-    "eslint-plugin-standard": "^3.0.1",
-    "eslint-plugin-vue": "^4.5.0"
-  },
+  "devDependencies": {},
   "browserslist": [
     ">0.5%",
     "last 3 versions"

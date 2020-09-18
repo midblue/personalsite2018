@@ -11,6 +11,16 @@
       <div>Projects</div>
     </nuxt-link>
 
+		<nuxt-link
+      to="/labs"
+      class="tab bubble-out-hover"
+      id="labs"
+      @click.native="clickHandler('labs')"
+      :class="{active: pageCategory === 'labs' }"
+    >
+      <div>Labs</div>
+    </nuxt-link>
+
     <nuxt-link
       to="/writing"
       class="tab bubble-out-hover"
@@ -104,12 +114,12 @@ $tab-height: $grid-base * 8;
   }
 
   @include width (mobile) {
-    margin-left: 0;
+    margin: 0;
     padding:
       $grid-base * .5
-      $grid-base * 3
+      $grid-base * 2
       $grid-base * .5
-      $grid-base * 3;
+      $grid-base * 2;
   }
 }
 
