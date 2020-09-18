@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/cmyk-tester", {data:[],fetch:[],mutations:[]});

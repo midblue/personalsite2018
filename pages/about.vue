@@ -36,7 +36,7 @@
 
         <p>
           <strong>Personally,</strong>
-          I've spent the last few years living in Japan (日本語も喋ります). I'm
+          I spent the last few years living in Japan (日本語も喋ります), but now I'm based in Amsterdam. I'm
           a huge traveler – from 2013 to 2017 I moved to seven new places, all
           carrying one backpack. I'm also an
           <nuxt-link to="/posts/esports7">esports lover</nuxt-link>: Super Smash
@@ -47,12 +47,7 @@
         <p>
           If you're interested in working together, or if you just want to know
           what I'm up to, don't hesitate to
-          <a href="mailto:jasperstephenson@gmail.com">email me</a> or check out
-          my
-          <a href="https://www.linkedin.com/in/jasperstephenson" target="_blank"
-            >LinkedIn</a
-          >
-          to stay up to date.
+          <a href="mailto:jasperstephenson@gmail.com">email me</a>.
         </p>
       </div>
     </div>
