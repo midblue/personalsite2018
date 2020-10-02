@@ -10,12 +10,14 @@ body {
   margin: 0 auto;
   border-radius: 50%;
   overflow: hidden;
+  mask-image: -webkit-radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
-.marker {
-  width: 250px;
-  height: 250px;
-  border: 1px solid rgba(0, 0, 255, 0.5);
-  background: radial-gradient(#3296ff 4%, blue 5%, rgba(0, 0, 255, 0.15) 5%, rgba(0, 0, 255, 0.01));
+.marker > div {
+  width: 18px;
+  height: 18px;
+  background: #3296ff;
   border-radius: 50%;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
 }
