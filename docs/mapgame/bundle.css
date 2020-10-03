@@ -14,11 +14,18 @@ body {
 }
 
 .marker > div {
-  width: 18px;
-  height: 18px;
+  width: 12px;
+  height: 12px;
   background: #3296ff;
   border-radius: 50%;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  z-index: 3;
+}
+
+.marker.me > div {
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.7);
 }
 
 .mapboxgl-ctrl {
