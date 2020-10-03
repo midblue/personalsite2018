@@ -13,9 +13,16 @@ body {
   -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
+.marker {
+  z-index: 3;
+}
+
+.marker.me {
+  z-index: 4;
+}
+
 .marker > div {
   position: relative;
-  z-index: 3;
   width: 12px;
   height: 12px;
   background: #3296ff;
