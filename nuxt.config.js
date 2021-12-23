@@ -1,3 +1,10 @@
+// todo
+/*
+add zine, overworld, update positivity
+audit writing
+refresh style (sidebar.io) (nuxt/content)
+*/
+
 const posts = [
   ...require('./static/writingorder'),
   ...require('./static/projectorder'),
