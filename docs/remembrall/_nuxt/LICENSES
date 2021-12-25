@@ -1,6 +1,3 @@
-/*! https://mths.be/punycode v1.4.1 by @mathias */
-
-
 /*!
   * vue-router v3.5.3
   * (c) 2021 Evan You
@@ -116,3 +113,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+
+/*! https://mths.be/punycode v1.4.1 by @mathias */
